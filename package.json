@@ -6,9 +6,20 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "nanoid": "^3.1.22",
+    "node-sass": "^5.0.0",
+    "plotly.js": "^1.58.4",
+    "popper.js": "^1.16.1",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
+    "react-plotly.js": "^2.5.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.0",
+    "react-use": "^17.2.3",
     "web-vitals": "^1.1.1"
   },
   "scripts": {
@@ -36,5 +47,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0"
+  }
 }
