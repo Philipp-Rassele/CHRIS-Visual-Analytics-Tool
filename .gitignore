@@ -29,3 +29,4 @@ todo
 /data/*.txt
 /api/flask_session
 settings.json
+.eslintrc.json
