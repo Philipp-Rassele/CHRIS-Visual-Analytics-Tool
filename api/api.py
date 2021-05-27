@@ -3,10 +3,12 @@ import os
 from re import M
 from flask import Flask, request, jsonify, session
 from flask_session import Session
+from datetime import timedelta
 import pandas as pd
 import geopandas as gpd
 import numpy as np
 import scipy.stats
+import math
 import json
 import plotly.express as px
 import plotly as plt
@@ -33,14 +35,14 @@ data_path = Path('../data')
 
 # Load data for questionaire
 df = pd.read_csv(str(data_path)+'/generated_variables_questionaire.csv',
-                 parse_dates=['x0_birthd', 'x0_examd', 'x0cs05', 'x0mt06', 'x0mt06a'])
-
+                parse_dates=['x0_birthd', 'x0_examd', 'x0cs05', 'x0mt06', 'x0mt06a'])
+# df = pd.read_csv(str(data_path)+'/weather_snd_test_df.csv')
 
 # Load dictionary with descriptions
-description_unit_dic = None
+description_unit_dic = None #weather_snd_test_df_dic.json
 with open(str(data_path)+'/description_unit_dic.txt', encoding="utf-8") as f:
     description_unit_dic = json.load(f)
-f.close()
+    f.close()
 
 # Load shapefiles for the muncipalities to use them later to merge
 geod = gpd.read_file(str(data_path)+'/shapefiles/Municipalities_polygon.shp')
@@ -53,17 +55,18 @@ geod['ID'] = geod['ID'].astype('str')
 
 # Load img names for carousel in individual page (but to frontend)
 pi_image_list = [os.path.basename(f)
-                 for f in glob.glob(".\\assets\\imgs\\*.png")]
+                for f in glob.glob(".\\assets\\imgs\\*.png")]
 
 
 # Mappings dictionary between the shapefile and CHRIS study municipalities
 cv_dic_1 = {'GLURNS': 81.0, 'GRAUN I. V.': 40.0, 'KASTELBELL': 94.0, 'LAAS': 79.0, 'LATSCH': 95.0, 'MALS': 53.0, 'MARTELL': 108.0,
             'PRAD A. ST.': 101.0, 'SCHLANDERS': 69.0, 'SCHLUDERNS': 93.0, 'SCHNALS': 57.0, 'STILFS': 103.0, 'TAUFERS I. M.': 75.0}
 cv_dic = {1: 81.0, 2: 40.0, 3: 94.0, 4: 79.0, 5: 95.0, 6: 53.0,
-          7: 108.0, 8: 101.0, 9: 69.0, 10: 93.0, 11: 57.0, 12: 103.0, 13: 75.0}
+        7: 108.0, 8: 101.0, 9: 69.0, 10: 93.0, 11: 57.0, 12: 103.0, 13: 75.0}
 # Add mapping ID from shapefile to be able to join with shapefile
 # df['ID'] = [cv_dic_1[i] for i in df['x0_residp']]
-df['ID'] = [cv_dic[int(i)] for i in df['x0_residp']]
+if 'x0_residp' in df:
+    df['ID'] = [cv_dic[int(i)] for i in df['x0_residp']]
 
 
 # Generations on setup
@@ -83,6 +86,7 @@ def get_cat_ncat_vars(desc_dic):
 
 # Generate options depending on variable types (categorical, ordered)
 splvars = get_cat_ncat_vars(description_unit_dic)
+
 optsc = []
 for indx, i in enumerate(splvars[0][0]):
     optsc.append({'label': splvars[1][0][indx], 'value': i})
@@ -100,10 +104,13 @@ optsall.extend(optsnc)
 app = Flask(__name__)
 #app.secret_key = b'BR2pmSf#W8m$&SxSbz8dw3TceYhxF^'
 # Check Configuration section for more details
-SESSION_TYPE = 'filesystem'
-SESSION_PERMANENT = False
+
 app.config.from_object(__name__)
-Session(app)
+app.config['SESSION_PERMANENT'] = True
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=5)
+sess = Session()
+sess.init_app(app)
 
 # Get all variable options
 @app.route('/api/dropdown-all-options', methods=['GET'])
@@ -134,8 +141,10 @@ def get_violin_plot():
     fa_col = sdic['fa_col'] if 'fa_col' in sdic else None
     fa_row = sdic['fa_row'] if 'fa_row' in sdic else None
     an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
-    if value:
+    if value and len(value) > 0:
         dff = df.query(f_value) if f_value else df.copy()
         dff = dff.sort_values(by=[an_value]) if an_value else dff
         if fa_col in dff and fa_col:
@@ -145,13 +154,35 @@ def get_violin_plot():
             dff[fa_row] = dff[fa_row].astype('str').replace(
                 description_unit_dic[fa_row][1])
         # Create violin plot
-        fig = px.violin(dff, y=value,  box=True, facet_col=fa_col, facet_row=fa_row, animation_frame=an_value
-                        ,color=colour)
+        fig = px.violin(dff, y=value,  box=True, facet_col=fa_col, facet_row=fa_row
+                        , animation_frame=an_value
+                        , color=colour
+                        #,points='all'
+                        )
         # fig.update_layout(title={'text':'Violin Plot'})
         # fig.update_xaxes(scaleanchor = "y", scaleratio = 1)
         fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
         fig.update_xaxes(showgrid=True, gridcolor='LightGray')
         fig.update_yaxes(showgrid=True, gridcolor='LightGray')
+        # Add violin plot info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if colour:
+                td['colour'] = colour
+            if f_value:
+                td['f_value'] = f_value
+            if fa_col:
+                td['fa_col'] = fa_col
+            if fa_row:
+                td['fa_row'] = fa_row
+            if an_value:
+                td['an_value'] = an_value
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['violin-plot-'+str(uid)] = td
+
         return {'figure': plt.io.to_json(fig)}
     else:
         return {}
@@ -169,6 +200,8 @@ def get_bar_plot():
     fa_col = sdic['fa_col'] if 'fa_col' in sdic else None
     fa_row = sdic['fa_row'] if 'fa_row' in sdic else None
     an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
     if x_value or y_value:
 
@@ -184,7 +217,7 @@ def get_bar_plot():
         # Create bar plot (improve todo)
         fig = None
         if x_value and y_value:
-            dff = dff[(dff[y_value].gt(-1))]
+            #dff = dff[(dff[y_value].gt(-1))]
 
             sc = type(description_unit_dic[y_value][1]) == dict
             if sc:
@@ -207,21 +240,22 @@ def get_bar_plot():
                 grpvar.append(an_value) if an_value else grpvar
 
                 # Calculate max y value
-                dfc = dff.groupby(grpvar).sum().reset_index()[y_value].max()
+                dfc = math.ceil(dff.groupby(grpvar).sum().reset_index()[y_value].max())
 
                 dff = dff.sort_values(by=[an_value, x_value])
-                fig = px.bar(dff, x=x_value, y=y_value, color=colour, facet_row=fa_row, facet_col=fa_col, range_y=[0, dfc], animation_frame=an_value
-                             )
+                fig = px.bar(dff, x=x_value, y=y_value, color=colour, facet_row=fa_row, facet_col=fa_col
+                            , range_y=[0, dfc], animation_frame=an_value
+                            )
             else:
                 if colour:
                     dff[colour] = dff[colour].astype('str').replace(
                         description_unit_dic[colour][1])
 
                 fig = px.bar(dff, x=x_value, y=y_value, color=colour, facet_row=fa_row, facet_col=fa_col, labels={y_value: 'sum('+y_value+')'}
-                             )
+                            )
 
         elif x_value:
-            dff = dff[(dff[x_value].gt(-1))]
+            #dff = dff[(dff[x_value].gt(-1))]
 
             sc = type(description_unit_dic[x_value][1]) == dict
             if sc:
@@ -246,15 +280,37 @@ def get_bar_plot():
             if an_value:
                 dfc = dfc.sort_values(by=[an_value, x_value])
                 fig = px.bar(dfc, x=x_value, y='count('+str(x_value if not colour else colour)+')', color=colour, facet_row=fa_row, facet_col=fa_col, range_y=[0, dfrc], animation_frame=an_value
-                             )
+                            )
             else:
                 fig = px.bar(dfc, x=x_value, y='count('+str(x_value if not colour else colour)+')', color=colour, facet_row=fa_row, facet_col=fa_col
-                             )
+                            )
 
         if fig:
             fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
             fig.update_xaxes(showgrid=True, gridcolor='LightGray')
             fig.update_yaxes(showgrid=True, gridcolor='LightGray')
+
+            # Add bar plot info to session
+            if uid and path:
+                td = {}
+                if x_value:
+                    td['x_value'] = x_value
+                if y_value:
+                    td['y_value'] = y_value
+                if colour:
+                    td['colour'] = colour
+                if f_value:
+                    td['f_value'] = f_value
+                if fa_col:
+                    td['fa_col'] = fa_col
+                if fa_row:
+                    td['fa_row'] = fa_row
+                if an_value:
+                    td['an_value'] = an_value
+                if path[1:] not in session:
+                    session[path[1:]] = {}
+                session[path[1:]]['bar-plot-'+str(uid)] = td
+
             return {'figure': plt.io.to_json(fig)}
         else:
             return {}
@@ -269,9 +325,11 @@ def get_bar_pyramid_plot():
     x_value = sdic['x_value'] if 'x_value' in sdic else None
     y_value = sdic['y_value'] if 'y_value' in sdic else None
     bi_value = sdic['bi_value'] if 'bi_value' in sdic else None
-    bins = int(sdic['bins']) if 'bins' in sdic else None
+    bins = int(sdic['bins']) if 'bins' in sdic and len(sdic['bins']) > 0 else None
     method = sdic['method'] if 'method' in sdic else None
     f_value = sdic['f_value'] if 'f_value' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
     if x_value and y_value and bi_value:
         if (type(description_unit_dic[bi_value][1]) == dict and
@@ -314,6 +372,25 @@ def get_bar_pyramid_plot():
             fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
             fig.update_xaxes(showgrid=True, gridcolor='LightGray')
             fig.update_yaxes(showgrid=True, gridcolor='LightGray')
+            # Add bar plot info to session
+            if uid and path:
+                td = {}
+                if x_value:
+                    td['x_value'] = x_value
+                if y_value:
+                    td['y_value'] = y_value
+                if bi_value:
+                    td['bi_value'] = bi_value
+                if f_value:
+                    td['f_value'] = f_value
+                if bins:
+                    td['bins'] = bins
+                if method:
+                    td['method'] = method
+                if path[1:] not in session:
+                    session[path[1:]] = {}
+                session[path[1:]]['bar-pyramid-plot-'+str(uid)] = td
+
             return {'figure': plt.io.to_json(fig)}
         else:
             return {'figure': '{}'}
@@ -329,18 +406,25 @@ def get_choropleth_map():
     m_value = sdic['method'] if 'method' in sdic else None
     f_value = sdic['f_value'] if 'f_value' in sdic else None
     an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
     if value:
         dff = df.query(f_value) if f_value else df.copy()
         # Filter negative values (maybe should be done in preprocessing step )
-        dff = dff[(dff[value].gt(-1))]
+        #dff = dff[(dff[value].gt(-1))]
+
+        center = None
+        if 'lat' in dff and 'lon' in dff:
+            center = {"lat":round(dff['lat'].mean(), 4), "lon":round(dff['lon'].mean(), 4)}
+
         df_merged = None
         if an_value:
             dff = dff.groupby(['ID', an_value]).agg(m_value).reset_index()
             dff['ID'] = dff['ID'].astype('str')
             dff[value] = dff[value].round(2)
             df_merged = pd.merge(geod[['ID', 'NAME_DE']], dff[[
-                                 'ID', value, an_value]], left_on='ID', right_on='ID', how='left')
+                                'ID', value, an_value]], left_on='ID', right_on='ID', how='left')
             df_merged = df_merged.dropna(subset=[value, 'NAME_DE'])
             df_merged[an_value] = df_merged[an_value].astype('int64')
         else:
@@ -348,7 +432,7 @@ def get_choropleth_map():
             dff['ID'] = dff['ID'].astype('str')
             dff[value] = dff[value].round(2)
             df_merged = pd.merge(geod[['ID', 'NAME_DE']], dff[[
-                                 'ID', value]], left_on='ID', right_on='ID', how='left')
+                                'ID', value]], left_on='ID', right_on='ID', how='left')
             df_merged = df_merged.dropna(subset=[value, 'NAME_DE'])
 
         # convert the coordinate reference system to lat/long and convert to geojson
@@ -356,8 +440,27 @@ def get_choropleth_map():
 
         # Start of plot/html/visual part
         fig = px.choropleth_mapbox(df_merged, geojson=vcs_json, locations='ID', featureidkey='properties.ID', color=value                # , color_continuous_scale=colorcet.CET_CBC2
-                                   , hover_data={'NAME_DE': True, 'ID': False}, mapbox_style="open-street-map", center={"lat": 46.657, "lon": 10.682138}, zoom=9, opacity=0.7, range_color=[df_merged[value].min(), df_merged[value].max()], labels={value: str(m_value)+' '+str(value), 'NAME_DE': 'Municipal'}, animation_frame=an_value
-                                   )
+                                , hover_data={'NAME_DE': True, 'ID': False}, mapbox_style="open-street-map"
+                                , center=center
+                                , zoom=9, opacity=0.7
+                                , range_color=[df_merged[value].min(), df_merged[value].max()]
+                                , labels={value: str(m_value)+' '+str(value), 'NAME_DE': 'Municipal'}
+                                , animation_frame=an_value
+                                )
+        # Add choropleth map info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if m_value:
+                td['m_value'] = m_value
+            if f_value:
+                td['f_value'] = f_value
+            if an_value:
+                td['an_value'] = an_value
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['choropleth-map-'+str(uid)] = td
 
         return {"figure": plt.io.to_json(fig)}
     else:
@@ -369,8 +472,10 @@ def get_confidence_interval():
     global df
     sdic = json.loads(request.data)
     value = sdic['value'] if 'value' in sdic else None
-    ci_value = int(sdic['ci_value']) if 'ci_value' in sdic else None
+    ci_value = int(sdic['ci_value']) if 'ci_value' else None
     f_value = sdic['f_value'] if 'f_value' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
     if value and ci_value:
         dff = df.query(f_value) if f_value else df.copy()
@@ -380,7 +485,31 @@ def get_confidence_interval():
         m, se = np.mean(a), scipy.stats.sem(a)
         h = se * scipy.stats.t.ppf((1 + (ci_value/100.0)) / 2., n-1)
 
-        return {"figure": {"mean": str(m.round(2)), "count": str(n), "sem": str(se.round(2)), "lb": str(round(m-h, 2)), "up": str(round(m+h, 2))}}
+        #Create a figure
+        fig = go.Figure(data=[go.Table(
+                header=dict(values=['mean', 'count', 'sem'
+                    , str(ci_value)+'% c.i. lower bound'
+                    , str(ci_value)+'% c.i. upper bound']),
+                cells=dict(values=[[str(m.round(2))], [str(n)]
+                    , [str(se.round(2))], [str(round(m-h, 2))]
+                    , [str(round(m+h, 2))]]
+                ))])
+        
+        # Add confidence interval info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if ci_value:
+                td['ci_value'] = ci_value
+            if f_value:
+                td['f_value'] = f_value
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['confidence-interval-'+str(uid)] = td
+
+        return {"figure": plt.io.to_json(fig)}
+        #{"figure": {"mean": str(m.round(2)), "count": str(n), "sem": str(se.round(2)), "lb": str(round(m-h, 2)), "up": str(round(m+h, 2))}}
     else:
         return {}
 
@@ -391,14 +520,27 @@ def get_correlation_plot():
     sdic = json.loads(request.data)
     value = sdic['value'] if 'value' in sdic else None
     m_value = sdic['method'] if 'method' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
-    if value and len(value) > 1 and m_value:
+    if value and len(value) > 0 and m_value:
         dfc = df[value].corr(method=m_value)
         fig = ff.create_annotated_heatmap(z=dfc.values.round(
             2)[::-1], x=dfc.columns.tolist(), y=dfc.index.tolist()[::-1])
         fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
         fig.update_xaxes(showgrid=True, gridcolor='LightGray')
         fig.update_yaxes(showgrid=True, gridcolor='LightGray')
+
+        # Add correlation plot info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if m_value:
+                td['m_value'] = m_value
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['correlation-plot-'+str(uid)] = td
 
         return {"figure": plt.io.to_json(fig)}
     else:
@@ -415,12 +557,13 @@ def get_histogram_plot():
     f_value = sdic['f_value'] if 'f_value' in sdic else None
     fa_col = sdic['fa_col'] if 'fa_col' in sdic else None
     fa_row = sdic['fa_row'] if 'fa_row' in sdic else None
-    f_value = sdic['f_value'] if 'f_value' in sdic else None
     an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    # uid = sdic['uid'] if 'uid' in sdic else None
+    # path = sdic['path'] if 'path' in sdic else None
 
-    if value is not None and len(value) > 1:
+    if value is not None and len(value) > 0:
         dff = df.query(f_value) if f_value else df.copy()
-        dff = dff[(dff[value].gt(-1))]
+        #dff = dff[(dff[value].gt(-1))]
 
         if fa_col in dff and fa_col:
             dff[fa_col] = dff[fa_col].astype('str').replace(
@@ -527,7 +670,7 @@ def get_histogram_plot():
             max_y = 0
             for i in fig_d['frames']:
                 unique, frequency = np.unique(i['data'][0]['x'], 
-                              return_counts = True)
+                            return_counts = True)
                 cmax = np.max(frequency)
                 max_y = cmax if cmax > max_y else max_y
             
@@ -537,15 +680,15 @@ def get_histogram_plot():
             print(plt.io.to_json(fig))
         else:
             cbins = None
-            if not sc:
+            if not sc and dff[value].dtypes != 'O':
                 # Use Freedman-Diaconis rule to calculate bins
-                q3, q1 = np.percentile(dff[value], [75, 25])
+                q3, q1 = np.nanpercentile(dff[value], [75, 25])
                 iqr = q3 - q1
                 h = 2*(iqr/(len(dff.index)**(1/3.0)))
-                range_d = dff[value].max()-dff[value].min()
+                range_d = abs(dff[value].max()-dff[value].min())
                 cbins = round(range_d/h)
             fig = px.histogram(dff, x=value, color=colour,
-                               facet_col=fa_col, facet_row=fa_row, nbins=cbins)
+                            facet_col=fa_col, facet_row=fa_row, nbins=cbins)
 
             fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
             fig.update_xaxes(showgrid=True, gridcolor='LightGray')
@@ -566,6 +709,8 @@ def get_line_plot():
     fa_row = sdic['fa_row'] if 'fa_row' in sdic else None
     f_value = sdic['f_value'] if 'f_value' in sdic else None
     an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
     if x_value and y_value:
         dff = df.query(f_value) if f_value else df.copy()
@@ -588,16 +733,37 @@ def get_line_plot():
         if x_value in df1 and y_value in df1:
             df1 = df1.sort_values(by=[an_value, x_value]) if an_value else df1
             # Create line plot
-            fig = px.line(df1, x=x_value, y=y_value, facet_row=fa_row, facet_col=fa_col, animation_frame=an_value, range_y=[df1[y_value].min(), df1[y_value].max()]
-                          # , error_x=[dff[x_value].sem() for i in range(len(dff))] if x_value else None
-                          # , error_y=[dff[y_value].sem() for i in range(len(dff))] if y_value else None
-                          )
+            fig = px.line(df1, x=x_value, y=y_value, facet_row=fa_row, facet_col=fa_col
+                            , animation_frame=an_value
+                            , range_y=[math.floor(df1[y_value].min())
+                                , math.ceil(df1[y_value].max())]
+                        # , error_x=[dff[x_value].sem() for i in range(len(dff))] if x_value else None
+                        # , error_y=[dff[y_value].sem() for i in range(len(dff))] if y_value else None
+                        )
             # fig.update_xaxes(scaleanchor = "y", scaleratio = 1)
             fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
             fig.update_xaxes(showgrid=True, gridcolor='LightGray')
             fig.update_yaxes(showgrid=True, gridcolor='LightGray',
-                             title_text='mean('+y_value+')')
+                            title_text='mean('+y_value+')')
 
+            # Add line plot info to session
+            if uid and path:
+                td = {}
+                if x_value:
+                    td['x_value'] = x_value
+                if y_value:
+                    td['y_value'] = y_value
+                if f_value:
+                    td['f_value'] = f_value
+                if fa_col:
+                    td['fa_col'] = fa_col
+                if fa_row:
+                    td['fa_row'] = fa_row
+                if an_value:
+                    td['an_value'] = an_value
+                if path[1:] not in session:
+                    session[path[1:]] = {}
+                session[path[1:]]['line-plot-'+str(uid)] = td
             return {"figure": plt.io.to_json(fig)}
         else:
             return {}
@@ -612,6 +778,8 @@ def get_scatter_map():
     value = sdic['value'] if 'value' in sdic else None
     f_value = sdic['f_value'] if 'f_value' in sdic else None
     an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
 
     if value:
         dff = df.query(f_value) if f_value else df.copy()
@@ -622,13 +790,27 @@ def get_scatter_map():
             if sc:
                 c_scale = colorcet.glasbey_dark
 
+            center = None
+            if 'lat' in dff and 'lon' in dff:
+                center = {"lat":round(dff['lat'].mean(), 4), "lon":round(dff['lon'].mean(), 4)}
             fig = None
             if sc:
                 fig = px.scatter_mapbox(dff, lat='lat', lon='lon', color=dff[value].astype('str').replace(description_unit_dic[value][1])                    # astype('category')
-                                        , zoom=8, center={"lat": 46.657, "lon": 10.682138}, mapbox_style="open-street-map", color_discrete_sequence=c_scale, range_color=[dff[value].min(), dff[value].max()], animation_frame=an_value
+                                        , zoom=9, center=center
+                                        , mapbox_style="open-street-map"
+                                        , color_discrete_sequence=c_scale
+                                        , range_color=[dff[value].min(), dff[value].max()]
+                                        , animation_frame=an_value
+                                        , opacity=0.7
                                         )
             else:
-                fig = px.scatter_mapbox(dff, lat='lat', lon='lon', color=value, zoom=9, center={"lat": 46.657, "lon": 10.682138}, mapbox_style="open-street-map", color_continuous_scale=c_scale, range_color=[dff[value].min(), dff[value].max()], animation_frame=an_value
+                fig = px.scatter_mapbox(dff, lat='lat', lon='lon', color=value
+                                        , zoom=9, center=center
+                                        , mapbox_style="open-street-map"
+                                        #, color_continuous_scale=c_scale
+                                        , range_color=[dff[value].min(), dff[value].max()]
+                                        , animation_frame=an_value
+                                        , opacity=0.7
                                         )
 
             # Add municipality  regions
@@ -645,6 +827,18 @@ def get_scatter_map():
                     }
                 ]
             )
+        # Add scatter map info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if f_value:
+                td['f_value'] = f_value
+            if an_value:
+                td['an_value'] = an_value
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['scatter-map-'+str(uid)] = td
 
         return {"figure": plt.io.to_json(fig)}
     else:
@@ -656,7 +850,10 @@ def get_home_view_scatter_map():
     global df
 
     if df is not None and len(df.index) > 0:
-        fig = px.scatter_mapbox(df.sort_values(by=['x0_examy']), lat='lat', lon='lon', zoom=8, center={"lat": 46.657, "lon": 10.682138}, mapbox_style="open-street-map", animation_frame='x0_examy', height=600
+        center = None
+        if 'lat' in df and 'lon' in df:
+            center = {"lat":round(df['lat'].mean(), 4), "lon":round(df['lon'].mean(), 4)}
+        fig = px.scatter_mapbox(df.sort_values(by=['x0_examy']), lat='lat', lon='lon', zoom=8, center=center, mapbox_style="open-street-map", animation_frame='x0_examy', height=600
                                 )
         fig.update_layout({'autosize': True})
         return {"figure": plt.io.to_json(fig)}
@@ -675,6 +872,60 @@ def get_home_view_df_info():
 
     return {'c1l': c1l}
 
+# Get Hexbin map
+@ app.route('/api/hexbinmap', methods=['POST'])
+def get_hexbin_map():
+    global df, geod, description_unit_dic
+    sdic = json.loads(request.data)
+    value = sdic['value'] if 'value' in sdic else None
+    m_value = sdic['method'] if 'method' in sdic else None
+    nr_hexs = int(sdic['nr_hexs']) if 'nr_hexs' in sdic and len(sdic['nr_hexs']) > 0 else None
+    f_value = sdic['f_value'] if 'f_value' in sdic else None
+    an_value = sdic['animation_variable'] if 'animation_variable' in sdic else None
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
+
+    if value:
+        dff = df.query(f_value) if f_value else df.copy()
+        # Filter negative values (maybe should be done in preprocessing step )
+        #dff = dff[(dff[value].gt(-1))]
+
+        agf = None
+        if m_value:
+            if m_value == 'mean':
+                agf = np.average
+            elif m_value == 'median':
+                agf = np.median
+
+        fig = ff.create_hexbin_mapbox(
+            data_frame=dff, lat='lat', lon='lon', color=value,
+            nx_hexagon=nr_hexs, min_count=1,
+            mapbox_style='open-street-map',
+            labels={'color':m_value+" "+value if m_value else "Count "+value},
+            color_continuous_scale=colorcet.bmy,
+            agg_func=agf, animation_frame=an_value
+        )
+        # Add hexbin map info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if m_value:
+                td['m_value'] = m_value
+            if f_value:
+                td['f_value'] = f_value
+            if nr_hexs:
+                td['nr_hexs'] = nr_hexs
+            if an_value:
+                td['an_value'] = an_value
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['hexbin-map-'+str(uid)] = td
+
+        return {"figure": plt.io.to_json(fig)}
+    else:
+        return {}
+
 # Create clustering view
 @ app.route('/api/clusteringview', methods=['POST'])
 def get_clustering_view():
@@ -682,10 +933,12 @@ def get_clustering_view():
     sdic = json.loads(request.data)
     value = sdic['value'] if 'value' in sdic else None
     min_value = int(sdic['min_value']) if 'min_value' in sdic else None
-    min_samples_size = int(sdic['min_samples']) if 'min_samples' in sdic else None
+    min_samples_size = int(sdic['min_samples']) if 'min_samples' in sdic and len(sdic['min_samples']) > 0 else None
     f_value = sdic['f_value'] if 'f_value' in sdic else None
-    
-    if value and len(value) > 1 and min_value:
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
+
+    if value and len(value) > 0 and min_value:
         dff = df.query(f_value) if f_value else df.copy()
         #Cluster data
         #dff = dff[value]
@@ -712,10 +965,12 @@ def get_clustering_view():
             #, color_discrete_sequence=colorcet.glasbey_dark
             , color_discrete_map=colour_dic
         )
-
+        center = None
+        if 'lat' in dff and 'lon' in dff:
+            center = {"lat":round(dff['lat'].mean(), 4), "lon":round(dff['lon'].mean(), 4)}
         # Create scatter map
         fig_geo = px.scatter_mapbox(dff, lat='lat', lon='lon', color='clusters', zoom=9
-                    , center={"lat": 46.657, "lon": 10.682138}
+                    , center=center
                     , mapbox_style="open-street-map"
                     # , color_discrete_sequence=colorcet.glasbey_dark
                     #, color_continuous_scale=colorcet.glasbey_dark
@@ -723,11 +978,40 @@ def get_clustering_view():
                     , color_discrete_map=colour_dic
                     , custom_data=[dff.index.to_numpy()])
 
+        # Add municipality  regions
+        vcs_json = geod.to_crs(epsg=4326).__geo_interface__
+        fig_geo.update_layout(
+            mapbox_layers=[
+                {
+                    'sourcetype': 'geojson',
+                    'source': vcs_json,
+                    'type': 'line',
+                    'below': 'traces',
+                    # 'opacity':0.7,
+                    'color': 'black'
+                }
+            ]
+        )
 
         fig.update_traces(diagonal_visible=False)
         fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
         fig.update_xaxes(showgrid=True, gridcolor='LightGray')
         fig.update_yaxes(showgrid=True, gridcolor='LightGray')
+        # Add clustering view info to session
+        if uid and path:
+            td = {}
+            if value:
+                td['value'] = value
+            if min_value:
+                td['min_value'] = min_value
+            if f_value:
+                td['f_value'] = f_value
+            if min_samples_size:
+                td['min_samples_size'] = min_samples_size
+            if path[1:] not in session:
+                session[path[1:]] = {}
+            session[path[1:]]['clustering-view'+str(uid)] = td
+
         return {"figure": plt.io.to_json(fig), "figure_geo": plt.io.to_json(fig_geo)}
     else:
         return {}
@@ -756,16 +1040,33 @@ def update_selection_colours():
         for ind, i in enumerate(np.unique(dff['clusters'])):
             colour_dic[i] = 'rgba'+str(ImageColor.getrgb(colorcet.glasbey_dark[ind]))[:-1]+', 1.0)'
         colour_dic['-1']= 'rgba(211,211,211, 0.45)'
-
+        center = None
+        if 'lat' in dff and 'lon' in dff:
+            center = {"lat":round(dff['lat'].mean(), 4), "lon":round(dff['lon'].mean(), 4)}
         # Create scatter map
         fig_geo = px.scatter_mapbox(dff, lat='lat', lon='lon'
                     , color='clusters', zoom=9
-                    , center={"lat": 46.657, "lon": 10.682138}
+                    , center=center
                     , mapbox_style="open-street-map"
                     # , color_discrete_sequence=colorcet.glasbey_dark
                     , range_color=[dff[value].min(), dff[value].max()]
                     , color_discrete_map=colour_dic#{-1:'rgba(211,211,211, 0.45)'}
                     , custom_data=[dff.index.to_numpy()])
+
+        # Add municipality  regions
+        vcs_json = geod.to_crs(epsg=4326).__geo_interface__
+        fig_geo.update_layout(
+            mapbox_layers=[
+                {
+                    'sourcetype': 'geojson',
+                    'source': vcs_json,
+                    'type': 'line',
+                    'below': 'traces',
+                    # 'opacity':0.7,
+                    'color': 'black'
+                }
+            ]
+        )
 
         # fig_geo.update_layout(legend_title='clusters & selections')
         return {"figure_geo": plt.io.to_json(fig_geo)}
@@ -994,3 +1295,51 @@ def get_group_compare_plot():
     
     else:
         return {}
+
+# Get the current analysis session info to save it
+@ app.route('/api/saveSession', methods=['GET'])
+def get_current_session_info():
+    sdic = {}
+    if 'IndividualView' in session:
+        sdic['IndividualView'] = session['IndividualView']
+    if 'ClusteringView' in session:
+        sdic['ClusteringView'] = session['ClusteringView']
+        sdic['clustering_colours'] = session['clustering_colours']
+        sdic['demographic_selection'] = session['demographic_selection']
+        sdic['selection_count'] = session['selection_count']
+    
+    if len(sdic.keys()) > 0:
+        return json.dumps({'sdic': sdic})
+    else:
+        return {}
+
+# Remove plot from session
+@ app.route('/api/removeFromSession', methods=['POST'])
+def remove_plot_from_Session():
+    sdic = json.loads(request.data)
+    uid = sdic['uid'] if 'uid' in sdic else None
+    path = sdic['path'] if 'path' in sdic else None
+
+    if uid and path:
+        if path[1:] in session:
+            if uid in session[path[1:]]:
+                session[path[1:]].pop(uid)
+        return {'msg':'Deletion successful'}
+    else:
+        return {'msg':'Not enough data'}
+
+# Clear user session vars
+@ app.route('/api/clearsessionforloadsession')
+def clear_session_vars():
+    if 'ClusteringView' in session:
+        session.pop('ClusteringView')
+    if 'clustering_colours' in session:
+        session.pop('clustering_colours')
+    if 'selection_count' in session:
+        session.pop('selection_count')
+    if 'demographic_selection' in session:
+        session.pop('demographic_selection')
+    if 'IndividualView' in session:
+        session.pop('IndividualView')
+
+    return {'msg':'Clearing successful'}

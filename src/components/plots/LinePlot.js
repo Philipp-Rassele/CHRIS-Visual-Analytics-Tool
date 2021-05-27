@@ -9,36 +9,18 @@ import Select from 'react-select'
 import { nanoid } from 'nanoid';
 
 function LinePlot(props){
-    // Think about handing down options so not for each plot the api is called unecessary
-    const [optionsNc, setNcOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-            setNcOptions(data.options)
-        })
-    }, [])
+    const [optionsAll, setAllOptions] = useState(props.optionsAll)
+    const [optionsNc, setNcOptions] = useState(props.optionsNc)
+    const [optionsC, setCOptions] = useState(props.optionsC)
 
-    const [optionsC, setCOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-            setCOptions(data.options)
-        })
-    }, [])
-
-    const [optionsAll, setAllOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-            setAllOptions(data.options)
-        })
-    }, [])
-
-    const [x_variable, setXVariable] = useState()
-    const [y_variable, setYVariable] = useState()
-    const [animation_variable, setAnimationVariable] = useState()
-    const [fa_col, setFa_col] = useState()
-    const [fa_row, setFa_row] = useState()
-    const [f_value, setF_value] = useState()
+    const [x_variable, setXVariable] = useState(props.x_value ? props.x_value : null)
+    const [y_variable, setYVariable] = useState(props.y_value ? props.y_value : null)
+    const [animation_variable, setAnimationVariable] = useState(props.an_value ? props.an_value : null)
+    const [fa_col, setFa_col] = useState(props.fa_col ? props.fa_col : null)
+    const [fa_row, setFa_row] = useState(props.fa_row ? props.fa_row : null)
+    const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
-    const uid = nanoid()
+    const [uid, setUID] = useState(nanoid())
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
@@ -51,7 +33,9 @@ function LinePlot(props){
                     'fa_col': fa_col,
                     'fa_row': fa_row,
                     'f_value': f_value,
-                    'animation_variable': animation_variable
+                    'animation_variable': animation_variable,
+                    'uid':uid,
+                    'path':window.location.pathname
                 }),
                 headers:{
                     "Content-Type": "application/json",
@@ -82,11 +66,15 @@ function LinePlot(props){
             outline:state.isFocused ? 0 : provided.outline,
             boxShadow: state.isFocused ? '0 0 0 .2rem rgba(0,123,255,.25)' : provided.boxShadow
           }),
+        menu: (provided, state) => ({
+            ...provided,
+            zIndex:2
+        })
     }
 
     const [toggleOption, settoggleOption] = useState({'display':'block'})
     const handleRmvBtn = () =>{
-        props.removeButtonHandler(props.index)
+        props.removeButtonHandler(props.index, 'line-plot-'+uid)
     }
 
     return(
@@ -131,6 +119,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-normal-x-variable-label-"+uid}
                             name="line-normal-x-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.x_value)}
                             styles={customStyles}
                             options={optionsNc}
                             className="basic-single"
@@ -145,6 +134,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-normal-y-variable-label-"+uid}
                             name="line-normal-y-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.y_value)}
                             styles={customStyles}
                             options={optionsNc}
                             className="basic-single"
@@ -161,6 +151,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-animation-variable-label-"+uid}
                             name="line-animation-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.an_value)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"
@@ -175,6 +166,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-normal-fa_col-label-"+uid}
                             name="line-normal-fa_col"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.fa_col)}
                             styles={customStyles}
                             options={optionsC}
                             className="basic-single"
@@ -189,6 +181,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-normal-fa_row-label-"+uid}
                             name="line-normal-fa_row"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.fa_row)}
                             styles={customStyles}
                             options={optionsC}
                             className="basic-single"
@@ -205,6 +198,7 @@ function LinePlot(props){
                             label='Filters: are applied on plot creation or by pressing the "Apply" button'
                             setFilter_btn_clicks={setFilter_btn_clicks}
                             count={filter_btn_clicks}
+                            f_value={props.f_value ? props.f_value : null}
                         />
                     </Col>
                 </Row>

@@ -13,94 +13,21 @@ import { useDebounce } from "react-use";
 import { nanoid } from 'nanoid';
 
 
-function ClusteringView(){
-    const [optionsNc, setNcOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-            setNcOptions(data.options)
-        })
-    }, [])
-
-    const [optionsC, setCOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-            setCOptions(data.options)
-        })
-    }, [])
-
-    const [optionsAll, setAllOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-            setAllOptions(data.options)
-        })
-    }, [])
+function ClusteringView(props){
+    // const [optionsAll, setAllOptions] = useState(props.optionsAll)
+    // const [optionsNc, setNcOptions] = useState(props.optionsNc)
+    // const [optionsC, setCOptions] = useState(props.optionsC)
 
     const [variable, setVariable] = useState()
     const [f_value, setF_value] = useState()
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
     const [min_cl_size, setMinClSize] = useState()
     const [min_samples, setMinSamples] = useState()
-    // const [demo_grp_select, setDemoGroupSelect] = useState(false)
-    const [uid, setUID] = useState(nanoid())
-
     const [comp_vars, setCompVars] = useState()
     const [comp_plot, setComPlotVar] = useState()
-    const [figure_comp, updateFigComp] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
-    useEffect(() => {
-        if (comp_plot && comp_vars.length > 0){
-            // let sv = []
-            let cv = []
-            let ncv = []
-            let el;
-            // console.log(optionsNc)
-            console.log(comp_vars[0])
-            for (el in comp_vars){
-                // sv.push(variable[el].value)
-                console.log(el)
-                // console.log(optionsNc.includes(comp_vars[el]))
-                if (optionsC.some(e => (e.value == comp_vars[el].value))){
-                    cv.push(comp_vars[el].value)
-                }else if(optionsNc.some(e => (e.value == comp_vars[el].value))){
-                    ncv.push(comp_vars[el].value)
-                }
-            }
-
-            const opts = {
-                method: "POST",
-                body: JSON.stringify({
-                    'ncv_values': ncv,
-                    'cv_values': cv,
-                    'plot_type': comp_plot.value,
-                    'f_value': f_value
-                }),
-                headers:{
-                    "Content-Type": "application/json",
-                }
-            }
-            const plot = '/api/selectiongroupcompare'
-
-            if (ncv.length > 0){
-                fetch(plot, opts)
-                    .then(res => {
-                        if (res.ok){
-                            return res.json()
-                        }
-                        return {}
-                        // throw res
-                        // throw new Error(message);
-                    })
-                    .then(data => {
-                        if ("figure_comp" in data){
-                            updateFigComp(
-                                JSON.parse(data.figure_comp)
-                            )
-                        }
-                    })
-            }
-        }
-    }, [comp_vars, comp_plot])
+    // const [demo_grp_select, setDemoGroupSelect] = useState(false)
+    const [uid, setUID] = useState(nanoid())
     
-
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     const [figure_geo, updateFigureGeo] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
@@ -148,8 +75,63 @@ function ClusteringView(){
                 })
         }
     }, [variable, min_cl_size, min_samples, filter_btn_clicks])
-    // animation_variable, colour, fa_col, fa_row, 
-   
+    
+    const [figure_comp, updateFigComp] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
+    useEffect(() => {
+        if (comp_plot && comp_vars.length > 0){
+            // let sv = []
+            let cv = []
+            let ncv = []
+            let el;
+            // console.log(optionsNc)
+            console.log(comp_vars[0])
+            for (el in comp_vars){
+                // sv.push(variable[el].value)
+                console.log(el)
+                // console.log(optionsNc.includes(comp_vars[el]))
+                if (props.optionsC.some(e => (e.value == comp_vars[el].value))){
+                    cv.push(comp_vars[el].value)
+                }else if(props.optionsNc.some(e => (e.value == comp_vars[el].value))){
+                    ncv.push(comp_vars[el].value)
+                }
+            }
+
+            const opts = {
+                method: "POST",
+                body: JSON.stringify({
+                    'ncv_values': ncv,
+                    'cv_values': cv,
+                    'plot_type': comp_plot.value,
+                    'f_value': f_value
+                }),
+                headers:{
+                    "Content-Type": "application/json",
+                }
+            }
+            const plot = '/api/selectiongroupcompare'
+
+            if (ncv.length > 0){
+                fetch(plot, opts)
+                    .then(res => {
+                        if (res.ok){
+                            return res.json()
+                        }
+                        return {}
+                        // throw res
+                        // throw new Error(message);
+                    })
+                    .then(data => {
+                        if ("figure_comp" in data){
+                            updateFigComp(
+                                JSON.parse(data.figure_comp)
+                            )
+                        }
+                    })
+            }
+        }
+    }, [comp_vars, comp_plot])
+
+
     const customStyles = {
         control: (provided, state) => ({
             ...provided,
@@ -157,10 +139,14 @@ function ClusteringView(){
             outline:state.isFocused ? 0 : provided.outline,
             boxShadow: state.isFocused ? '0 0 0 .2rem rgba(0,123,255,.25)' : provided.boxShadow
           }),
+        menu: (provided, state) => ({
+            ...provided,
+            zIndex:2
+        })
     }
 
     const [toggleOption, settoggleOption] = useState({'display':'block'})
-    
+    const [toggleOption2, settoggleOption2] = useState({'display':'block'})
     // Debounce number inputs
     const [val, setVal] = useState();
     const [, cancel] = useDebounce(
@@ -179,7 +165,6 @@ function ClusteringView(){
         850,
         [val1]
     );
-
 
     let handleSelect = ((e) =>{
         if (document.getElementById("formBasicCheckbox"+uid).checked){
@@ -291,7 +276,7 @@ function ClusteringView(){
                                     aria-labelledby={"scatter-plot-variable-label-"+uid}
                                     name="scatter-plot-variable"
                                     styles={customStyles}
-                                    options={optionsAll}
+                                    options={props.optionsAll}
                                     className="basic-multiple"
                                     classNamePrefix="select"
                                     isMulti
@@ -318,7 +303,7 @@ function ClusteringView(){
                                 <Form.Group>
                                     <Form.Label>Minimum sample size (optional)</Form.Label>
                                     <Form.Control type="number" min={1}
-                                        placeholder='Minimum points that a cluster must contain'
+                                        placeholder='Conservative clustering level. Normally equal to minimum cluster size.'
                                         value={val1}
                                         onChange={({currentTarget}) =>{
                                             setVal1(currentTarget.value)
@@ -352,56 +337,67 @@ function ClusteringView(){
                             />
                         </Col>
                     </Row>
-                    {/* <Row noGutters={true}>
+                    <Row className="justify-content-center">
                         <Col>
-                            <ScatterPlot removeButton={false} removeButtonHandler={null} index={null}/>
                         </Col>
-                    </Row> */}
-                    <Row noGutters={true}>
-                        <Col>
-                        <Form.Group controlId={"formBasicCheckbox"+uid} >
-                            <Form.Check type="checkbox" 
-                                label="Activate selection of demographic groups" 
-                                // onChange={(e) => {
-                                //     setDemoGroupSelect(e.target.checked)
-                                // }}
+                        <Col xs="auto">
+                            <Button size="sm" onClick={(e) => {
+                                e.preventDefault()
+                                if (toggleOption2.display == 'block'){
+                                    settoggleOption2({'display':'none'})
+                                }else if (toggleOption2.display == 'none'){
+                                    settoggleOption2({'display':'block'})
+                                }
+                            }}>Toggle options</Button>
+                        </Col>
+                    </Row>
+                    <div style={toggleOption2}>
+                        <Row noGutters={true}>
+                            <Col>
+                            <Form.Group controlId={"formBasicCheckbox"+uid} >
+                                <Form.Check type="checkbox" 
+                                    label="Activate selection of demographic groups" 
+                                    // onChange={(e) => {
+                                    //     setDemoGroupSelect(e.target.checked)
+                                    // }}
+                                    />
+                            </Form.Group>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <label id={"scatter-plot-compare-variable-label-"+uid}>Variables to compare selections with</label>
+                                <Select
+                                    aria-labelledby={"scatter-plot-compare-variable-label-"+uid}
+                                    name="scatter-plot-compare-variable"
+                                    styles={customStyles}
+                                    options={props.optionsAll}
+                                    className="basic-multiple"
+                                    classNamePrefix="select"
+                                    isMulti
+                                    // isClearable={true}
+                                    isSearchable={true}
+                                    onChange={(value) => setCompVars(value ? value: null)}
                                 />
-                        </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <label id={"scatter-plot-compare-variable-label-"+uid}>Variables to compare selections with</label>
-                            <Select
-                                aria-labelledby={"scatter-plot-compare-variable-label-"+uid}
-                                name="scatter-plot-compare-variable"
-                                styles={customStyles}
-                                options={optionsAll}
-                                className="basic-multiple"
-                                classNamePrefix="select"
-                                isMulti
-                                // isClearable={true}
-                                isSearchable={true}
-                                onChange={(value) => setCompVars(value ? value: null)}
-                            />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <label id={"selection-plot-variable-label-"+uid}>Select plot were variables are compared</label>
-                            <Select
-                                aria-labelledby={"selection-plot-variable-label-"+uid}
-                                name="scatter-plot-compare-variable"
-                                styles={customStyles}
-                                options={select_plots_options}
-                                className="basic-select"
-                                classNamePrefix="select"
-                                // isClearable={true}
-                                isSearchable={true}
-                                onChange={(value) => setComPlotVar(value ? value: null)}
-                            />
-                        </Col>
-                    </Row>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <label id={"selection-plot-variable-label-"+uid}>Select plot were variables are compared</label>
+                                <Select
+                                    aria-labelledby={"selection-plot-variable-label-"+uid}
+                                    name="scatter-plot-compare-variable"
+                                    styles={customStyles}
+                                    options={select_plots_options}
+                                    className="basic-select"
+                                    classNamePrefix="select"
+                                    // isClearable={true}
+                                    isSearchable={true}
+                                    onChange={(value) => setComPlotVar(value ? value: null)}
+                                />
+                            </Col>
+                        </Row>
+                    </div>
                 </Col>
                 <Col  lg={12} md={12} xs={12}>
                     <Row noGutters={true}>

@@ -1,0 +1,1055 @@
+{
+  "rows": [
+    {
+      "altitude": 210,
+      "categoryId": 2,
+      "code": "89940PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1900,
+      "lastUpdated": null,
+      "latitude": "46,243333",
+      "longitude": "11,20262",
+      "lwdType": null,
+      "n": "--",
+      "name": "ETSCH BEI SALURN",
+      "p": "--",
+      "q": "--",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1900/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1900/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1900/33/de?scat_id=2"
+        },
+        {
+          "code": "SSTF",
+          "description": "Schwebstoffkonzentration",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1900/38/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 873.99,
+      "categoryId": 2,
+      "code": "08155PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1940,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,621876",
+      "longitude": "10,64963",
+      "lwdType": null,
+      "n": "--",
+      "name": "ETSCH BEI EYRS",
+      "p": "--",
+      "q": "12.1",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "85",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1940/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1940/4/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 506.34,
+      "categoryId": 2,
+      "code": "19850PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 122,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,67202",
+      "longitude": "11,07961",
+      "lwdType": null,
+      "n": "--",
+      "name": "ETSCH BEI TÖLL",
+      "p": "--",
+      "q": "29.5",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "152",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "9",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/122/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/122/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/122/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 237.04,
+      "categoryId": 2,
+      "code": "29850PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 124,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,48316",
+      "longitude": "11,30381",
+      "lwdType": null,
+      "n": "--",
+      "name": "ETSCH BEI SIGMUNDSKRON",
+      "p": "--",
+      "q": "62.9",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "220",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "10",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/124/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/124/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/124/33/de?scat_id=2"
+        },
+        {
+          "code": "SSTF",
+          "description": "Schwebstoffkonzentration",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/124/38/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 939.59,
+      "categoryId": 2,
+      "code": "36750PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 125,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,88395",
+      "longitude": "11,43143",
+      "lwdType": null,
+      "n": "--",
+      "name": "MAREITERBACH BEI STERZING",
+      "p": "--",
+      "q": "13.4",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "179",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/125/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/125/4/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 815.77,
+      "categoryId": 2,
+      "code": "59450PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 127,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,81704",
+      "longitude": "11,93472",
+      "lwdType": null,
+      "n": "--",
+      "name": "AHR BEI ST.GEORGEN",
+      "p": "--",
+      "q": "27.7",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "132",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "5",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/127/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/127/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/127/33/de?scat_id=2"
+        },
+        {
+          "code": "SSTF",
+          "description": "Schwebstoffkonzentration",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/127/38/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 813.27,
+      "categoryId": 2,
+      "code": "64550PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 128,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,77610",
+      "longitude": "11,87967",
+      "lwdType": null,
+      "n": "--",
+      "name": "GADER BEI MONTAL",
+      "p": "--",
+      "q": "14.2",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "129",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/128/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/128/4/de?scat_id=2"
+        },
+        {
+          "code": "SSTF",
+          "description": "Schwebstoffkonzentration",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/128/38/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 733.19,
+      "categoryId": 2,
+      "code": "67350PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 129,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,81555",
+      "longitude": "11,70816",
+      "lwdType": null,
+      "n": "--",
+      "name": "RIENZ BEI VINTL",
+      "p": "--",
+      "q": "77.4",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "132",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "7",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/129/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/129/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/129/33/de?scat_id=2"
+        },
+        {
+          "code": "SSTF",
+          "description": "Schwebstoffkonzentration",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/129/38/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 551.54,
+      "categoryId": 2,
+      "code": "69790PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 130,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,70738",
+      "longitude": "11,65720",
+      "lwdType": null,
+      "n": "--",
+      "name": "EISACK BEI BRIXEN",
+      "p": "--",
+      "q": "132.0",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "201",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/130/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/130/4/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 226.05,
+      "categoryId": 2,
+      "code": "85550PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 133,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,41368",
+      "longitude": "11,31525",
+      "lwdType": null,
+      "n": "--",
+      "name": "ETSCH BEI BRANZOLL",
+      "p": "--",
+      "q": "249.2",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "217",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "8",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/133/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/133/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/133/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 882.34,
+      "categoryId": 2,
+      "code": "05950PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 140,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,63648",
+      "longitude": "10,60352",
+      "lwdType": null,
+      "n": "--",
+      "name": "ETSCH BEI SPONDINIG",
+      "p": "--",
+      "q": "6.8",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "43",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "7",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/140/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/140/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/140/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 927.36,
+      "categoryId": 2,
+      "code": "37230PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 521,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,87070",
+      "longitude": "11,47787",
+      "lwdType": null,
+      "n": "--",
+      "name": "EISACK BEI FREIENFELD",
+      "p": "--",
+      "q": "28.3",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "162",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "5",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/521/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/521/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/521/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 808.71,
+      "categoryId": 2,
+      "code": "61050PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 620,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,79152",
+      "longitude": "11,92169",
+      "lwdType": null,
+      "n": "--",
+      "name": "RIENZ BEI STEGEN",
+      "p": "--",
+      "q": "55.1",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "201",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "6",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/620/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/620/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/620/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 287.71,
+      "categoryId": 2,
+      "code": "82910PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 980,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,50977",
+      "longitude": "11,35018",
+      "lwdType": null,
+      "n": "--",
+      "name": "TALFER BEI BOZEN",
+      "p": "--",
+      "q": "21.9",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "78",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "7",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/980/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/980/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/980/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 1190,
+      "categoryId": 2,
+      "code": "73950PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 520,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,58271",
+      "longitude": "11,63623",
+      "lwdType": null,
+      "n": "--",
+      "name": "GRÖDNERBACH BEI PONTIVES",
+      "p": "--",
+      "q": "9.7",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "61",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "5",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/520/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/520/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/520/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 355.88,
+      "categoryId": 2,
+      "code": "22950PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1421,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,68396",
+      "longitude": "11,17721",
+      "lwdType": null,
+      "n": "--",
+      "name": "PASSER BEI MERAN",
+      "p": "--",
+      "q": "16.2",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "61",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "6",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1421/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1421/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1421/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 942.14,
+      "categoryId": 2,
+      "code": "03750PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1422,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,67082",
+      "longitude": "10,52390",
+      "lwdType": null,
+      "n": "--",
+      "name": "RAMBACH BEI LAATSCH",
+      "p": "--",
+      "q": "3.8",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "34",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "6",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1422/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1422/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1422/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 1122.81,
+      "categoryId": 2,
+      "code": "42850PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1423,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,73912",
+      "longitude": "12,13444",
+      "lwdType": null,
+      "n": "--",
+      "name": "PRAGSERBACH BEI AUSSERPRAGS",
+      "p": "--",
+      "q": "4.0",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "31",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1423/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1423/4/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 1044.78,
+      "categoryId": 2,
+      "code": "51450PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1424,
+      "lastUpdated": "2021-05-18T09:00:00",
+      "latitude": "46,99459",
+      "longitude": "11,98027",
+      "lwdType": null,
+      "n": "--",
+      "name": "AHR BEI STEINHAUS",
+      "p": "--",
+      "q": "5.6",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "73",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "5",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1424/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1424/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1424/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 1569.26,
+      "categoryId": 2,
+      "code": "20750PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1425,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,80145",
+      "longitude": "11,10271",
+      "lwdType": null,
+      "n": "--",
+      "name": "PFELDERERBACH BEI ESCHBAUM",
+      "p": "--",
+      "q": "3.2",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "54",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "4",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1425/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1425/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1425/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 270.5,
+      "categoryId": 2,
+      "code": "26950PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1426,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,62764",
+      "longitude": "11,16523",
+      "lwdType": null,
+      "n": "--",
+      "name": "FALSCHAUER BEI LANA",
+      "p": "--",
+      "q": "24.7",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "113",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "8",
+      "visibility": 9,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1426/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1426/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1426/33/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 1127.32,
+      "categoryId": 2,
+      "code": "91850PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1427,
+      "lastUpdated": "2021-05-18T09:00:00",
+      "latitude": "46,71759",
+      "longitude": "12,33682",
+      "lwdType": null,
+      "n": "--",
+      "name": "DRAU BEI VIERSCHACH",
+      "p": "--",
+      "q": "7.5",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "59",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1427/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1427/4/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 235.03,
+      "categoryId": 2,
+      "code": "83450PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1400,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,45877",
+      "longitude": "11,30278",
+      "lwdType": null,
+      "n": "--",
+      "name": "EISACK BEI BOZEN SÜD",
+      "p": "--",
+      "q": "168.0",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "216",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "9",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "Q",
+          "description": "Durchfluss",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1400/1/de?scat_id=2"
+        },
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1400/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1400/33/de?scat_id=2"
+        },
+        {
+          "code": "SSTF",
+          "description": "Schwebstoffkonzentration",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1400/38/de?scat_id=2"
+        }
+      ]
+    },
+    {
+      "altitude": 942,
+      "categoryId": 2,
+      "code": "32470PG",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1585,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,892976",
+      "longitude": "11,442841",
+      "lwdType": null,
+      "n": "--",
+      "name": "EISACK BEI STERZING",
+      "p": "--",
+      "q": "--",
+      "rh": "--",
+      "t": "--",
+      "vaxcode": null,
+      "w": "71",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "6",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "W",
+          "description": "Wasserstand",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1585/4/de?scat_id=2"
+        },
+        {
+          "code": "WT",
+          "description": "Wassertemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1585/33/de?scat_id=2"
+        }
+      ]
+    }
+  ]
+}

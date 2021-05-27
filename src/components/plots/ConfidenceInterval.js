@@ -2,90 +2,88 @@ import React, { useEffect, useState, Component } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Table from "react-bootstrap/Table";
+import Form from "react-bootstrap/Form";
 import FilterCustom from "../FilterCustom";
 import Select from 'react-select'
+import Plot from 'react-plotly.js';
+// Unique id generator
+import { nanoid } from 'nanoid';
+import { useDebounce } from "react-use";
 
 function ConfidenceInterval(props){
-    // Think about handing down options so not for each plot the api is called unecessary
-    const [optionsNc, setNcOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-            setNcOptions(data.options)
-        })
-    }, [])
+    const [optionsAll, setAllOptions] = useState(props.optionsAll)
+    const [optionsNc, setNcOptions] = useState(props.optionsNc)
+    const [optionsC, setCOptions] = useState(props.optionsC)
 
-    const [optionsC, setCOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-            setCOptions(data.options)
-        })
-    }, [])
-
-    const [variable, setVariable] = useState()
-    const [conf_iv_lvl, setConf_iv_lvl] = useState(95)
-    const [f_value, setF_value] = useState()
+    const [variable, setVariable] = useState(props.variable ? props.variable : null)
+    const [conf_iv_lvl, setConf_iv_lvl] = useState(props.ci_value ? props.ci_value : 95)
+    const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
+    const [uid, setUID] = useState(nanoid())
 
-    const [figure, updateFigure] = useState()
+    const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
         if (variable){
-            const opts = {
-                method: "POST",
-                body: JSON.stringify({
-                    'value': variable,
-                    'ci_value': conf_iv_lvl,
-                    'f_value': f_value
-                }),
-                headers:{
-                    "Content-Type": "application/json",
+            if (conf_iv_lvl != '' && conf_iv_lvl > 0 && conf_iv_lvl < 100){
+                const opts = {
+                    method: "POST",
+                    body: JSON.stringify({
+                        'value': variable,
+                        'ci_value': conf_iv_lvl,
+                        'f_value': f_value,
+                        'uid':uid,
+                        'path':window.location.pathname
+                    }),
+                    headers:{
+                        "Content-Type": "application/json",
+                    }
                 }
+                
+                fetch('/api/confidenceinterval', opts)
+                    .then(res => {
+                        if (res.ok){
+                            return res.json()
+                        }
+                        throw res
+                    })
+                    .then(data => {
+                        if ("figure" in data){
+                            updateFigure(JSON.parse(data.figure))
+                            // createTable(
+                            //     data.figure
+                            // )
+                        }
+                    })
             }
-            
-            fetch('/api/confidenceinterval', opts)
-                .then(res => {
-                    if (res.ok){
-                        return res.json()
-                    }
-                    throw res
-                })
-                .then(data => {
-                    console.log(data)
-                    if ("figure" in data){
-                        createTable(
-                            data.figure
-                        )
-                    }
-                })
         }
     }, [variable, conf_iv_lvl, filter_btn_clicks])
    
-    const createTable = ((data) =>{
-        if ('sem' in data){
-            const conf_iv = 
-                <Table responsive bordered>
-                    <thead>
-                        <tr>
-                            <th>mean</th>
-                            <th>count</th>
-                            <th>sem</th>
-                            <th>{conf_iv_lvl}% c.i. lower bound</th>
-                            <th>{conf_iv_lvl}% c.i. upper bound</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{data.mean}</td>
-                            <td>{data.count}</td>
-                            <td>{data.sem}</td>
-                            <td>{data.lb}</td>
-                            <td>{data.up}</td>
-                        </tr>
-                    </tbody>
-                </Table>;
-            updateFigure(conf_iv)
-        }
-    })
+    // const createTable = ((data) =>{
+    //     if ('sem' in data){
+    //         const conf_iv = 
+    //             <Table responsive bordered>
+    //                 <thead>
+    //                     <tr>
+    //                         <th>mean</th>
+    //                         <th>count</th>
+    //                         <th>sem</th>
+    //                         <th>{conf_iv_lvl}% c.i. lower bound</th>
+    //                         <th>{conf_iv_lvl}% c.i. upper bound</th>
+    //                     </tr>
+    //                 </thead>
+    //                 <tbody>
+    //                     <tr>
+    //                         <td>{data.mean}</td>
+    //                         <td>{data.count}</td>
+    //                         <td>{data.sem}</td>
+    //                         <td>{data.lb}</td>
+    //                         <td>{data.up}</td>
+    //                     </tr>
+    //                 </tbody>
+    //             </Table>;
+    //         updateFigure(conf_iv)
+    //     }
+    // })
 
     const customStyles = {
         control: (provided, state) => ({
@@ -94,18 +92,40 @@ function ConfidenceInterval(props){
             outline:state.isFocused ? 0 : provided.outline,
             boxShadow: state.isFocused ? '0 0 0 .2rem rgba(0,123,255,.25)' : provided.boxShadow
           }),
+        menu: (provided, state) => ({
+            ...provided,
+            zIndex:2
+        })
     }
 
     const [toggleOption, settoggleOption] = useState({'display':'block'})
     const handleRmvBtn = () =>{
-        props.removeButtonHandler(props.index)
+        props.removeButtonHandler(props.index, 'confidence-interval-'+uid)
     }
+
+    // Debounce ci_value number input
+    const [val, setVal] = useState(props.ci_value ? props.ci_value : 95);
+    const [, cancel] = useDebounce(
+        () => {
+            setConf_iv_lvl(val)
+        },
+        850,
+        [val]
+    );
 
     return(
         <div>
             <Row noGutters={true}>
                 <Col>
-                    {figure}
+                    {/* {figure} */}
+                    <Plot 
+                        data={figure.data}
+                        layout={figure.layout}
+                        frames={figure.frames}
+                        config={figure.config}
+                        useResizeHandler={true}
+                        className="d-flex h-auto"
+                    />
                 </Col>
             </Row>
             <Row className="justify-content-center">
@@ -132,16 +152,16 @@ function ConfidenceInterval(props){
             <div style={toggleOption}>
                 <Row>
                     <Col>
-                        <label>Confidence Interval of level(%)</label>
-                        <input type="number" min="1" max="99"
-                            className='form-control'
-                            defaultValue={95}
-                            onKeyUpCapture={(e) => {
-                                if (e.target.value > 0 && e.target.value < 100){
-                                    setConf_iv_lvl(e.target.value)
+                        <Form.Group controlId={'confidence_level'+uid}>
+                            <Form.Label>Confidence Interval of level(%)</Form.Label>
+                            <Form.Control
+                                type="number"
+                                value={val}
+                                onChange={({currentTarget}) =>{
+                                    setVal(currentTarget.value)
                                 }}
-                            }
-                        />
+                            />
+                        </Form.Group>
                     </Col>
                 </Row>
                 <Row>
@@ -150,6 +170,7 @@ function ConfidenceInterval(props){
                         <Select
                             aria-labelledby="conf-iv-variable-label"
                             name="conf-iv-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.variable)}
                             styles={customStyles}
                             options={optionsNc}
                             className="basic-single"
@@ -166,6 +187,7 @@ function ConfidenceInterval(props){
                             label='Filters: are applied on plot creation or by pressing the "Apply" button'
                             setFilter_btn_clicks={setFilter_btn_clicks}
                             count={filter_btn_clicks}
+                            f_value={props.f_value ? props.f_value : null}
                         />
                     </Col>
                 </Row>

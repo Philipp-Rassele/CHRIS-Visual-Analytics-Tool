@@ -12,7 +12,8 @@ function FilterCustom(props){
             </Row>
             <Row>
                 <Col>
-                    <Form.Control type="text" 
+                    <Form.Control type="text"
+                        defaultValue={props.f_value ? props.f_value : null} 
                         onChange={(e) => props.handleChange(e.target.value)}
                         placeholder='var1>10, var2==1, 10 <= var3 <= 15, var4 == "Value1", var5 in [val1, val2, val3, val4]'
                     />

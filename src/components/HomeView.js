@@ -26,7 +26,7 @@ function HomeView(){
                 // throw res
             })
             .then(data => {
-                if ("c1l" in data){
+                if (data && "c1l" in data){
                    
                     data.c1l.map((item) => {
                         console.log(item[0], item[1])    
@@ -77,7 +77,7 @@ function HomeView(){
                 throw res
             })
             .then(data => {
-                if ("figure" in data){
+                if (data && "figure" in data){
                     updateFigure(
                         JSON.parse(data.figure)
                     )

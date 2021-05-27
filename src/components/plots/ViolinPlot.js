@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState, useMemo} from "react";
 import { Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Plot from 'react-plotly.js';
@@ -6,37 +6,21 @@ import FilterCustom from "../FilterCustom";
 import Select from 'react-select'
 // Unique id generator
 import { nanoid } from 'nanoid';
+import SliderCustom from "../SliderCustom";
 
 function ViolinPlot(props){
-    // Think about handing down options so not for each plot the api is called unecessary
-    const [optionsNc, setNcOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-            setNcOptions(data.options)
-        })
-    }, [])
-
-    const [optionsC, setCOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-            setCOptions(data.options)
-        })
-    }, [])
-
-    const [optionsAll, setAllOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-            setAllOptions(data.options)
-        })
-    }, [])
+    const [optionsAll, setAllOptions] = useState(props.optionsAll)
+    const [optionsNc, setNcOptions] = useState(props.optionsNc)
+    const [optionsC, setCOptions] = useState(props.optionsC)
     
-    const [variable, setVariable] = useState()
-    const [animation_variable, setAnimationVariable] = useState()
-    const [fa_col, setFa_col] = useState()
-    const [fa_row, setFa_row] = useState()
-    const [f_value, setF_value] = useState()
+    const [variable, setVariable] = useState(props.variable ? props.variable : null)
+    const [animation_variable, setAnimationVariable] = useState(props.an_value ? props.an_value : null)
+    const [fa_col, setFa_col] = useState(props.fa_col ? props.fa_col : null)
+    const [fa_row, setFa_row] = useState(props.fa_row ? props.fa_row : null)
+    const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
-    const uid = nanoid()
+    const [uid, setUID] = useState(nanoid())
+    // const uid = nanoid()
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
@@ -48,7 +32,9 @@ function ViolinPlot(props){
                     'fa_col': fa_col,
                     'fa_row': fa_row,
                     'f_value': f_value,
-                    'animation_variable': animation_variable
+                    'animation_variable': animation_variable,
+                    'uid':uid,
+                    'path':window.location.pathname
                 }),
                 headers:{
                     "Content-Type": "application/json",
@@ -79,17 +65,54 @@ function ViolinPlot(props){
             outline:state.isFocused ? 0 : provided.outline,
             boxShadow: state.isFocused ? '0 0 0 .2rem rgba(0,123,255,.25)' : provided.boxShadow
           }),
+        menu: (provided, state) => ({
+            ...provided,
+            zIndex:2
+        })
     }
+
+    const sliderStyle = {
+        position: "relative",
+        width: "100%",
+    };
 
     const [toggleOption, settoggleOption] = useState({'display':'block'})
     const handleRmvBtn = () =>{
-        props.removeButtonHandler(props.index)
+        props.removeButtonHandler(props.index, 'violin-plot-'+uid)
     }
 
+    const [xs, updateXS] = useState(12)
+    const [md, updateMD] = useState(12)
+    const [lg, updateLG] = useState(4)
+//     lg={4} md={12} xs={12}
+    const updateInteractiveFigureSize = (value) => {
+        let w = window.innerWidth;
+        if (w < 576){
+            updateXS(value)
+            updateMD(12)
+            updateLG(12)
+            console.log('test')
+            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+        }else if(w > 768 && w < 992){
+            updateXS(4)
+            updateMD(value)
+            updateLG(12)
+            console.log('test')
+            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+        }else if (w > 991){
+            updateXS(4)
+            updateMD(12)
+            updateLG(value)
+            console.log('test')
+            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+        }
+    }
+    
     return(
-        <div>
+        <Col>
+        {/* xs={xs} md={md} lg={lg}  */}
             <Row noGutters={true}>
-                <Col>
+                <Col id={'plot-'+uid}>
                     <Plot 
                         data={figure.data}
                         layout={figure.layout}
@@ -100,8 +123,12 @@ function ViolinPlot(props){
                     />
                 </Col>
             </Row>
-            <Row className="justify-content-center">
-                <Col>
+            <Row className="justify-content-center align-items-center">
+                {/* <Col className="pr-3 pl-3" xs="auto">
+                    <p>Size:</p>
+                </Col> */}
+                <Col className="pr-0 pl-0">
+                    {/* <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}/> */}
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {
@@ -124,10 +151,11 @@ function ViolinPlot(props){
             <div style={toggleOption}>
                 <Row>
                     <Col>
-                        <label id={"vp-variable-label"+uid}>Variables</label>
+                        <label id={"vp-variable--"+uid}>Variables</label>
                         <Select
-                            aria-labelledby={"vp-variable-label"+uid}
+                            aria-labelledby={"vp-variable-label-"+uid}
                             name="vp-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.variable)}
                             styles={customStyles}
                             options={optionsNc}
                             className="basic-single"
@@ -142,6 +170,7 @@ function ViolinPlot(props){
                         <Select
                             aria-labelledby={"vp-variable-animation-variable-label-"+uid}
                             name="vp-variable-animation-variable"
+                            defaultValue={props.optionsAll.filter(option => option.value === props.an_value)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"
@@ -154,10 +183,11 @@ function ViolinPlot(props){
                 </Row>
                 <Row>
                     <Col>
-                        <label id={"vp-fa_col-label"+uid}>Facet col</label>
+                        <label id={"vp-fa_col-label-"+uid}>Facet col</label>
                         <Select
-                            aria-labelledby={"vp-fa_col-label"+uid}
+                            aria-labelledby={"vp-fa_col-label-"+uid}
                             name="vp-fa_col"
+                            defaultValue={props.optionsC.filter(option => option.value === props.fa_col)}
                             styles={customStyles}
                             options={optionsC}
                             className="basic-single"
@@ -170,8 +200,9 @@ function ViolinPlot(props){
                     <Col>
                         <label id={"vp-fa_row-label"+uid}>Facet row</label>
                         <Select
-                            aria-labelledby={"vp-fa_row-label"+uid}
+                            aria-labelledby={"vp-fa_row-label-"+uid}
                             name="vp-fa_row"
+                            defaultValue={props.optionsC.filter(option => option.value === props.fa_row)}
                             styles={customStyles}
                             options={optionsC}
                             className="basic-single"
@@ -188,11 +219,12 @@ function ViolinPlot(props){
                             label='Filters: are applied on plot creation or by pressing the "Apply" button'
                             setFilter_btn_clicks={setFilter_btn_clicks}
                             count={filter_btn_clicks}
+                            f_value={props.f_value ? props.f_value : null}
                         />
                     </Col>
                 </Row>
             </div>
-        </div>
+        </Col>
     );
 }
 

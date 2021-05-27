@@ -11,4 +11,6 @@ export { default as HistogramPlot } from "./plots/HistogramPlot";
 export { default as LinePlot } from "./plots/LinePlot";
 export { default as ScatterMap } from "./plots/ScatterMap";
 export { default as ClusteringView } from "./ClusteringView";
-export { default as ScatterPlot } from "./plots/ScatterPlot";
+export { default as ScatterPlot } from "./plots/unused_ScatterPlot";
+export { default as SliderCustom } from "./SliderCustom";
+export { default as HexbinMap } from "./SliderCustom";

@@ -13,6 +13,7 @@ import histogram_plot_img from '../imgs/histogram-plot.png';
 import line_plot_img from '../imgs/line-plot.png';
 import scatter_map_img from '../imgs/scatter-map.png';
 import violin_plot_img from '../imgs/violin-plot.png';
+import hexbin_map_img from '../imgs/hexbin-map.png';
 // Plots components
 import ViolinPlot from './plots/ViolinPlot';
 import Barplot from './plots/BarPlot';
@@ -23,10 +24,11 @@ import CorrelationPlot from './plots/CorrelationPlot';
 import HistogramPlot from './plots/HistogramPlot';
 import LinePlot from './plots/LinePlot';
 import ScatterMap from './plots/ScatterMap';
+import HexbinMap from './plots/HexbinMap';
 // Unique id generator
 import { nanoid } from 'nanoid';
 
-function IndividualView(){
+function IndividualView(props){
     const dstyle = {
         'display':'flex'
         , 'flex-flow':'row wrap'
@@ -36,94 +38,130 @@ function IndividualView(){
 
     const imgslist = ['violin_plot', 'bar_plot', 'bar_pyramid_plot', 'choropleth_map'
         , 'confidence_interval', 'correlation_plot', 'histogram_plot', 'line_plot'
-        , 'scatter_map']
+        , 'scatter_map', 'hexbin_map']
     const [index, setIndex] = useState(0);
-    const [plotList, updateList] = useState([]);
+    const plotList = props.plotList
 
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
     };
 
-    const addPlotAction = event => {
-        const nplot = imgslist[index];
+    const addPlotAction = (event) => {
+        const nplot = imgslist[index]
         const nid = nanoid()+plotList.length
         if (nplot == 'violin_plot'){
-            updateList(plotList => [...plotList, 
+            props.updateList(plotList => [...plotList, 
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <ViolinPlot removeButton={true} removeButtonHandler={removePlotAction}
+                    {/* lg={4} md={12} xs={12} */}
+                    <ViolinPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}
                     />
                 </Col>
              ]
             );
         }else if (nplot == 'bar_plot'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <Barplot removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <Barplot removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'bar_pyramid_plot'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <BarPyramidPlot removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <BarPyramidPlot removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'choropleth_map'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <ChoroplethMap removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <ChoroplethMap removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'confidence_interval'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <ConfidenceInterval removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <ConfidenceInterval removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'correlation_plot'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <CorrelationPlot removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <CorrelationPlot removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'histogram_plot'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <HistogramPlot removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <HistogramPlot removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'line_plot'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <LinePlot removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <LinePlot removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'scatter_map'){
-            updateList(plotList => [...plotList,
+            props.updateList(plotList => [...plotList,
                 <Col key={nid} lg={4} md={12} xs={12}>
-                    <ScatterMap removeButton={true} removeButtonHandler={removePlotAction}
-                        index={nid}/>
+                    <ScatterMap removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
+                </Col>
+            ]);
+        }else if (nplot == 'hexbin_map'){
+            props.updateList(plotList => [...plotList,
+                <Col key={nid} lg={4} md={12} xs={12}>
+                    <HexbinMap removeButton={true} removeButtonHandler={props.removePlotAction}
+                        index={nid}
+                        optionsAll={props.optionsAll}
+                        optionsNc={props.optionsNc}
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }
     }
 
-    const removePlotAction = (index) => {
-        updateList(plotList => plotList.filter((item) => item.key != index))
-    };
+    
     
 
     return(
         <div className="Individual_view fluid">
             <Row style={dstyle} noGutters={true}>
-                {plotList}
+                {props.plotList}
             </Row>
             <Row className="justify-content-center text-center">
                 <Col>
@@ -135,8 +173,8 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Violin plot</p>
-                                <p>Usefull to display distributions</p>
+                                <p><span>Violin plot</span></p>
+                                <p><span>Usefull to display distributions</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -146,8 +184,8 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Bar plot</p>
-                                <p>Usefull to display amounts</p>
+                                <p><span>Bar plot</span></p>
+                                <p><span>Usefull to display amounts</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -157,8 +195,8 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Bar pyramid plot</p>
-                                <p>Usefull to create age pyramids</p>
+                                <p><span>Bar pyramid plot</span></p>
+                                <p><span>Usefull to create age pyramids</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -168,8 +206,8 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Choropleth map</p>
-                                <p>Spatial visualisation of data</p>
+                                <p><span>Choropleth map</span></p>
+                                <p><span>Spatial visualisation of data</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -179,7 +217,7 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Confidence interval</p>
+                                <p><span>Confidence interval</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -189,8 +227,8 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Correlation plot</p>
-                                <p>Usefull to display correlations</p>
+                                <p><span>Correlation plot</span></p>
+                                <p><span>Usefull to display correlations</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -200,7 +238,7 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Histogram plot</p>
+                                <p><span>Histogram plot</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -210,7 +248,7 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Line plot</p>
+                                <p><span>Line plot</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -220,8 +258,19 @@ function IndividualView(){
                                 style={{'width':'65vmin'}}
                             />
                             <Carousel.Caption>
-                                <p>Scatter map</p>
-                                <p>Spatial vis of point data</p>
+                                <p><span>Scatter map</span></p>
+                                <p><span>Spatial vis of point data</span></p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <img 
+                                src={hexbin_map_img}
+                                alt="Hexbin map"
+                                style={{'width':'65vmin'}}
+                            />
+                            <Carousel.Caption>
+                                <p><span>Hexbin map</span></p>
+                                {/* <p><span>Spatial vis of point data</span></p> */}
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>

@@ -8,33 +8,15 @@ import Select from 'react-select'
 import { nanoid } from 'nanoid';
 
 function ScatterMap(props){
-    // Think about handing down options so not for each plot the api is called unecessary
-    const [optionsNc, setNcOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-            setNcOptions(data.options)
-        })
-    }, [])
+    const [optionsAll, setAllOptions] = useState(props.optionsAll)
+    const [optionsNc, setNcOptions] = useState(props.optionsNc)
+    const [optionsC, setCOptions] = useState(props.optionsC)
 
-    const [optionsC, setCOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-            setCOptions(data.options)
-        })
-    }, [])
-
-    const [optionsAll, setAllOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-            setAllOptions(data.options)
-        })
-    }, [])
-
-    const [variable, setVariable] = useState()
-    const [animation_variable, setAnimationVariable] = useState()
-    const [f_value, setF_value] = useState()
+    const [variable, setVariable] = useState(props.variable ? props.variable : null)
+    const [animation_variable, setAnimationVariable] = useState(props.an_value ? props.an_value : null)
+    const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
-    const uid = nanoid()
+    const [uid, setUID] = useState(nanoid())
     // Figure variable that saves the data of the figure for plotly js
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
@@ -44,7 +26,9 @@ function ScatterMap(props){
                 body: JSON.stringify({
                     'value': variable,
                     'f_value': f_value,
-                    'animation_variable': animation_variable
+                    'animation_variable': animation_variable,
+                    'uid':uid,
+                    'path':window.location.pathname
                 }),
                 headers:{
                     "content-type": "application/json",
@@ -75,11 +59,15 @@ function ScatterMap(props){
             outline:state.isFocused ? 0 : provided.outline,
             boxShadow: state.isFocused ? '0 0 0 .2rem rgba(0,123,255,.25)' : provided.boxShadow
           }),
+        menu: (provided, state) => ({
+            ...provided,
+            zIndex:2
+        })
     }
 
     const [toggleOption, settoggleOption] = useState({'display':'block'})
     const handleRmvBtn = () =>{
-        props.removeButtonHandler(props.index)
+        props.removeButtonHandler(props.index, 'scatter-map-'+uid)
     }
 
     return(
@@ -124,6 +112,7 @@ function ScatterMap(props){
                         <Select
                             aria-labelledby={"map-sc-variable-label-"+uid}
                             name="map-sc-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.variable)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"
@@ -138,6 +127,7 @@ function ScatterMap(props){
                         <Select
                             aria-labelledby={"map-sc-animation-variable-label-"+uid}
                             name="map-sc-animation-variable"
+                            defaultValue={props.optionsNc.filter(option => option.value === props.an_value)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"
@@ -154,6 +144,7 @@ function ScatterMap(props){
                             label='Filters: are applied on plot creation or by pressing the "Apply" button'
                             setFilter_btn_clicks={setFilter_btn_clicks}
                             count={filter_btn_clicks}
+                            f_value={props.f_value ? props.f_value : null}
                         />
                     </Col>
                 </Row>

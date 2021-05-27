@@ -1,0 +1,3200 @@
+{
+  "rows": [
+    {
+      "altitude": 1142,
+      "categoryId": 1,
+      "code": "25900MS",
+      "dd": "E",
+      "ff": "9.7",
+      "hs": "--",
+      "id": 1291,
+      "lastUpdated": "2021-05-18T09:40:00",
+      "latitude": "46,5417",
+      "longitude": "10,9898",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "St. Walburg",
+      "p": "1012.9",
+      "q": "--",
+      "rh": "47",
+      "t": "10.6",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "20.9",
+      "sd": "01:06",
+      "gs": "662",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1291/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1594,
+      "categoryId": 1,
+      "code": "73500MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1292,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5456",
+      "longitude": "11,7684",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Wolkenstein",
+      "p": "1012.4",
+      "q": "--",
+      "rh": "38",
+      "t": "8.4",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1292/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1292/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1292/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1292/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1410,
+      "categoryId": 1,
+      "code": "68600MS",
+      "dd": "SE",
+      "ff": "1.8",
+      "hs": "--",
+      "id": 1293,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8483",
+      "longitude": "11,6272",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Vals",
+      "p": "1013.1",
+      "q": "--",
+      "rh": "66",
+      "t": "7.5",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.8",
+      "sd": "01:06",
+      "gs": "674",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1293/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1499,
+      "categoryId": 1,
+      "code": "02200MS",
+      "dd": "N",
+      "ff": "9.7",
+      "hs": "--",
+      "id": 1294,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7759",
+      "longitude": "10,5289",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "St. Valentin a.d. Haide",
+      "p": "1011.8",
+      "q": "--",
+      "rh": "48",
+      "t": "9.8",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "15.8",
+      "sd": "01:49",
+      "gs": "860",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1294/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1235,
+      "categoryId": 1,
+      "code": "03100MS",
+      "dd": "E",
+      "ff": "0.7",
+      "hs": "--",
+      "id": 1295,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6373",
+      "longitude": "10,4615",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Taufers i.M.",
+      "p": "1012.1",
+      "q": "--",
+      "rh": "38",
+      "t": "11.4",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.5",
+      "sd": "01:36",
+      "gs": "464",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1295/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1219,
+      "categoryId": 1,
+      "code": "41000MS",
+      "dd": "N",
+      "ff": "4.7",
+      "hs": "--",
+      "id": 1296,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7299",
+      "longitude": "12,2191",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Toblach",
+      "p": "1014.4",
+      "q": "--",
+      "rh": "71",
+      "t": "8.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "10.1",
+      "sd": "02:04",
+      "gs": "714",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1296/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 840,
+      "categoryId": 1,
+      "code": "75600MS",
+      "dd": "N",
+      "ff": "2.9",
+      "hs": "--",
+      "id": 1297,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5134",
+      "longitude": "11,5060",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Völs am Schlern",
+      "p": "1010.8",
+      "q": "--",
+      "rh": "49",
+      "t": "12.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "13.0",
+      "sd": "01:59",
+      "gs": "666",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1297/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1150,
+      "categoryId": 1,
+      "code": "62600MS",
+      "dd": "N",
+      "ff": "2.5",
+      "hs": "--",
+      "id": 1298,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6792",
+      "longitude": "11,8979",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "St. Martin in Thurn",
+      "p": "1012.2",
+      "q": "--",
+      "rh": "56",
+      "t": "9.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "8.3",
+      "sd": "01:12",
+      "gs": "738",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1298/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1720,
+      "categoryId": 1,
+      "code": "11400MS",
+      "dd": "S",
+      "ff": "14.8",
+      "hs": "--",
+      "id": 1302,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5169",
+      "longitude": "10,7269",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Hintermartell",
+      "p": "1014.5",
+      "q": "--",
+      "rh": "34",
+      "t": "7.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "27.0",
+      "sd": "01:03",
+      "gs": "250",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1302/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1310,
+      "categoryId": 1,
+      "code": "02500MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1303,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7057",
+      "longitude": "10,5213",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Marienberg",
+      "p": "1011.0",
+      "q": "--",
+      "rh": "38",
+      "t": "11.7",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "01:57",
+      "gs": "521",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1303/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1303/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1303/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1303/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1303/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1303/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1440,
+      "categoryId": 1,
+      "code": "33500MS",
+      "dd": "NW",
+      "ff": "0.4",
+      "hs": "--",
+      "id": 1304,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,9656",
+      "longitude": "11,5981",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Pfitsch St. Jakob",
+      "p": "1013.0",
+      "q": "--",
+      "rh": "56",
+      "t": "8.2",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "4.7",
+      "sd": "01:11",
+      "gs": "566",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1304/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1412,
+      "categoryId": 1,
+      "code": "44500MS",
+      "dd": "NE",
+      "ff": "3.6",
+      "hs": "--",
+      "id": 1305,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8353",
+      "longitude": "12,2427",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "St. Magdalena in Gsies",
+      "p": "1017.1",
+      "q": "--",
+      "rh": "61",
+      "t": "7.7",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.8",
+      "sd": "00:48",
+      "gs": "707",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1305/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1907,
+      "categoryId": 1,
+      "code": "06400MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1306,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5159",
+      "longitude": "10,5953",
+      "lwdType": 2,
+      "n": "0.0",
+      "name": "Sulden",
+      "p": "1011.5",
+      "q": "--",
+      "rh": "40",
+      "t": "5.5",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "01:22",
+      "gs": "627",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1306/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1306/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1306/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1306/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1306/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1306/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1349,
+      "categoryId": 1,
+      "code": "65600MS",
+      "dd": "SW",
+      "ff": "3.6",
+      "hs": "--",
+      "id": 1307,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8345",
+      "longitude": "11,7856",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Terenten",
+      "p": "1014.2",
+      "q": "--",
+      "rh": "73",
+      "t": "7.0",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.8",
+      "sd": "01:05",
+      "gs": "353",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1307/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1900,
+      "categoryId": 1,
+      "code": "24400MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1308,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,4868",
+      "longitude": "10,8318",
+      "lwdType": 2,
+      "n": "0.0",
+      "name": "Ulten Weißbrunn",
+      "p": "1011.5",
+      "q": "--",
+      "rh": "36",
+      "t": "5.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "02:53",
+      "gs": "289",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1308/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1308/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1308/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1308/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1308/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1308/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1131,
+      "categoryId": 1,
+      "code": "43200MS",
+      "dd": "W",
+      "ff": "5.8",
+      "hs": "--",
+      "id": 1309,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7431",
+      "longitude": "12,1289",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Welsberg",
+      "p": "1010.7",
+      "q": "--",
+      "rh": "64",
+      "t": "8.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "12.2",
+      "sd": "02:06",
+      "gs": "710",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1309/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1128,
+      "categoryId": 1,
+      "code": "78305MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1310,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,4289",
+      "longitude": "11,5366",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Welschnofen",
+      "p": "1008.0",
+      "q": "--",
+      "rh": "37",
+      "t": "12.4",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "02:22",
+      "gs": "679",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1310/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1310/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1310/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1310/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1310/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1310/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1141,
+      "categoryId": 1,
+      "code": "56500MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1311,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8901",
+      "longitude": "11,8744",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Mühlwald",
+      "p": "1013.5",
+      "q": "--",
+      "rh": "59",
+      "t": "9.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 9,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1311/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1311/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1311/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1311/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1285,
+      "categoryId": 1,
+      "code": "42700MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1312,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7119",
+      "longitude": "12,1000",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "St. Veit in Prags",
+      "p": "1016.1",
+      "q": "--",
+      "rh": "61",
+      "t": "8.0",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1312/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1312/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1312/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1312/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1700,
+      "categoryId": 1,
+      "code": "15800MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1313,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7357",
+      "longitude": "10,8493",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Schnals Vernagt",
+      "p": "1012.4",
+      "q": "--",
+      "rh": "36",
+      "t": "7.6",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1313/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1313/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1313/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1313/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 746,
+      "categoryId": 1,
+      "code": "65350MS",
+      "dd": "E",
+      "ff": "7.6",
+      "hs": "--",
+      "id": 1820,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8111",
+      "longitude": "11,7534",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Obervintl",
+      "p": "1013.2",
+      "q": "--",
+      "rh": "61",
+      "t": "10.5",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "12.6",
+      "sd": "01:10",
+      "gs": "278",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1820/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 970,
+      "categoryId": 1,
+      "code": "82910MS",
+      "dd": "SE",
+      "ff": "2.2",
+      "hs": "--",
+      "id": 1723,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5304",
+      "longitude": "11,3319",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Jenesien",
+      "p": "1014.1",
+      "q": "--",
+      "rh": "55",
+      "t": "10.8",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "5.4",
+      "sd": "02:15",
+      "gs": "502",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1723/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 254,
+      "categoryId": 1,
+      "code": "27100MS",
+      "dd": "SE",
+      "ff": "2.5",
+      "hs": "--",
+      "id": 1800,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5767",
+      "longitude": "11,2008",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Gargazon",
+      "p": "1014.7",
+      "q": "--",
+      "rh": "48",
+      "t": "15.4",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "8.6",
+      "sd": "01:31",
+      "gs": "661",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1800/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 226,
+      "categoryId": 1,
+      "code": "85700MS",
+      "dd": "W",
+      "ff": "2.5",
+      "hs": "--",
+      "id": 1220,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,4065",
+      "longitude": "11,3111",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Branzoll",
+      "p": "1013.6",
+      "q": "--",
+      "rh": "47",
+      "t": "14.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "5.8",
+      "sd": "02:51",
+      "gs": "655",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1220/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1551,
+      "categoryId": 1,
+      "code": "87300MS",
+      "dd": "SW",
+      "ff": "4.7",
+      "hs": "--",
+      "id": 2020,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,3465",
+      "longitude": "11,3968",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Radein",
+      "p": "1012.1",
+      "q": "--",
+      "rh": "40",
+      "t": "9.0",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "9.0",
+      "sd": "02:40",
+      "gs": "703",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/2020/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 943,
+      "categoryId": 1,
+      "code": "37100MS",
+      "dd": "NW",
+      "ff": "2.2",
+      "hs": "--",
+      "id": 1202,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8850",
+      "longitude": "11,4386",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Sterzing",
+      "p": "--",
+      "q": "--",
+      "rh": "55",
+      "t": "11.6",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "5.4",
+      "sd": "01:34",
+      "gs": "770",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/8/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1202/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1640,
+      "categoryId": 1,
+      "code": "20500MS",
+      "dd": "SW",
+      "ff": "6.8",
+      "hs": "--",
+      "id": 1280,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7965",
+      "longitude": "11,0883",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Pfelders",
+      "p": "1012.1",
+      "q": "--",
+      "rh": "50",
+      "t": "7.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "13.0",
+      "sd": "01:09",
+      "gs": "753",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1280/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 541,
+      "categoryId": 1,
+      "code": "19300MS",
+      "dd": "E",
+      "ff": "6.8",
+      "hs": "--",
+      "id": 1281,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6477",
+      "longitude": "10,9912",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Naturns",
+      "p": "1014.0",
+      "q": "--",
+      "rh": "51",
+      "t": "14.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "11.2",
+      "sd": "03:01",
+      "gs": "676",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1281/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1450,
+      "categoryId": 1,
+      "code": "80300MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1282,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7799",
+      "longitude": "11,4144",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Pens",
+      "p": "1012.7",
+      "q": "--",
+      "rh": "40",
+      "t": "9.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1282/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1282/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1282/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1282/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1450,
+      "categoryId": 1,
+      "code": "50500MS",
+      "dd": "W",
+      "ff": "1.8",
+      "hs": "--",
+      "id": 1283,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "47,0366",
+      "longitude": "12,0991",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Prettau",
+      "p": "1012.7",
+      "q": "--",
+      "rh": "51",
+      "t": "8.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "4.7",
+      "sd": "00:13",
+      "gs": "373",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1283/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1364,
+      "categoryId": 1,
+      "code": "34500MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1284,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,9091",
+      "longitude": "11,3068",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Ridnaun",
+      "p": "1015.7",
+      "q": "--",
+      "rh": "58",
+      "t": "9.8",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1284/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1284/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1284/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1284/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 851,
+      "categoryId": 1,
+      "code": "56900MS",
+      "dd": "SE",
+      "ff": "1.1",
+      "hs": "--",
+      "id": 1285,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,9003",
+      "longitude": "11,9474",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Sand i.T. Mühlen",
+      "p": "1012.0",
+      "q": "--",
+      "rh": "65",
+      "t": "9.6",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.5",
+      "sd": "00:40",
+      "gs": "512",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1285/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1562,
+      "categoryId": 1,
+      "code": "54500MS",
+      "dd": "W",
+      "ff": "5.0",
+      "hs": "--",
+      "id": 1286,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,9428",
+      "longitude": "12,0825",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Rein in Taufers",
+      "p": "1012.0",
+      "q": "--",
+      "rh": "46",
+      "t": "7.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "11.5",
+      "sd": "00:42",
+      "gs": "673",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1286/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 698,
+      "categoryId": 1,
+      "code": "09700MS",
+      "dd": "E",
+      "ff": "9.7",
+      "hs": "--",
+      "id": 1288,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6238",
+      "longitude": "10,7803",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Schlanders",
+      "p": "1011.4",
+      "q": "--",
+      "rh": "47",
+      "t": "14.5",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "15.1",
+      "sd": "02:27",
+      "gs": "563",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1288/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 970,
+      "categoryId": 1,
+      "code": "82200MS",
+      "dd": "SE",
+      "ff": "8.6",
+      "hs": "--",
+      "id": 1289,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6406",
+      "longitude": "11,3551",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Sarnthein",
+      "p": "1011.7",
+      "q": "--",
+      "rh": "45",
+      "t": "13.2",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "13.0",
+      "sd": "02:15",
+      "gs": "699",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1289/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 212,
+      "categoryId": 1,
+      "code": "88820MS",
+      "dd": "E",
+      "ff": "15.5",
+      "hs": "--",
+      "id": 1290,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,2362",
+      "longitude": "11,1855",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Salurn",
+      "p": "1014.1",
+      "q": "--",
+      "rh": "44",
+      "t": "15.7",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "20.9",
+      "sd": "03:05",
+      "gs": "670",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1290/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 828,
+      "categoryId": 1,
+      "code": "59700MS",
+      "dd": "N",
+      "ff": "2.9",
+      "hs": "--",
+      "id": 1240,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8043",
+      "longitude": "11,9315",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Bruneck",
+      "p": "1015.0",
+      "q": "--",
+      "rh": "71",
+      "t": "9.0",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "7.6",
+      "sd": "01:23",
+      "gs": "720",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1240/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1470,
+      "categoryId": 1,
+      "code": "85120MS",
+      "dd": "N",
+      "ff": "4.0",
+      "hs": "--",
+      "id": 1241,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,4205",
+      "longitude": "11,4269",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Deutschnofen",
+      "p": "1011.8",
+      "q": "--",
+      "rh": "40",
+      "t": "9.3",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "9.7",
+      "sd": "03:04",
+      "gs": "706",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1241/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 254,
+      "categoryId": 1,
+      "code": "83200MS",
+      "dd": "W",
+      "ff": "5.0",
+      "hs": "--",
+      "id": 1242,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,4977",
+      "longitude": "11,3128",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Bozen",
+      "p": "1013.8",
+      "q": "--",
+      "rh": "43",
+      "t": "16.1",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "9.4",
+      "sd": "03:07",
+      "gs": "637",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 0,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1242/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 250,
+      "categoryId": 1,
+      "code": "86900MS",
+      "dd": "--",
+      "ff": "--",
+      "hs": "--",
+      "id": 1243,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,3469",
+      "longitude": "11,3050",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Auer",
+      "p": "1013.8",
+      "q": "--",
+      "rh": "68",
+      "t": "12.4",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "--",
+      "sd": "00:46",
+      "gs": "664",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1243/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1243/3/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1243/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1243/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1243/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1243/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 590,
+      "categoryId": 1,
+      "code": "39100MS",
+      "dd": "S",
+      "ff": "5.4",
+      "hs": "--",
+      "id": 1244,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7305",
+      "longitude": "11,6442",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Brixen Vahrn",
+      "p": "1012.8",
+      "q": "--",
+      "rh": "52",
+      "t": "13.7",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "10.4",
+      "sd": "01:41",
+      "gs": "716",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 7,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1244/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 874,
+      "categoryId": 1,
+      "code": "08200MS",
+      "dd": "W",
+      "ff": "7.6",
+      "hs": "--",
+      "id": 1245,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6249",
+      "longitude": "10,6496",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Laas - Eyrs",
+      "p": "1011.9",
+      "q": "--",
+      "rh": "29",
+      "t": "15.8",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "16.9",
+      "sd": "02:09",
+      "gs": "785",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1245/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 330,
+      "categoryId": 1,
+      "code": "23200MS",
+      "dd": "SE",
+      "ff": "4.3",
+      "hs": "--",
+      "id": 1246,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,6880",
+      "longitude": "11,1366",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Meran",
+      "p": "1013.4",
+      "q": "--",
+      "rh": "43",
+      "t": "15.6",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "9.7",
+      "sd": "01:57",
+      "gs": "710",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 8,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1246/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 1320,
+      "categoryId": 1,
+      "code": "47400MS",
+      "dd": "W",
+      "ff": "1.4",
+      "hs": "--",
+      "id": 1260,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8704",
+      "longitude": "12,1166",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Antholz Obertal",
+      "p": "1010.2",
+      "q": "--",
+      "rh": "54",
+      "t": "8.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.1",
+      "sd": "00:51",
+      "gs": "648",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1260/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 224,
+      "categoryId": 1,
+      "code": "86600MS",
+      "dd": "N",
+      "ff": "1.1",
+      "hs": "--",
+      "id": 1261,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,3825",
+      "longitude": "11,2887",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Laimburg",
+      "p": "1014.5",
+      "q": "--",
+      "rh": "54",
+      "t": "14.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "6.8",
+      "sd": "02:30",
+      "gs": "666",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 10,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1261/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 850,
+      "categoryId": 1,
+      "code": "37700MS",
+      "dd": "W",
+      "ff": "14.8",
+      "hs": "--",
+      "id": 1262,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,8125",
+      "longitude": "11,5488",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Franzensfeste Grasstein",
+      "p": "1011.4",
+      "q": "--",
+      "rh": "51",
+      "t": "12.8",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "19.8",
+      "sd": "--",
+      "gs": "--",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1262/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1262/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1262/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1262/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1262/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1262/9/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 490,
+      "categoryId": 1,
+      "code": "74900MS",
+      "dd": "NE",
+      "ff": "9.4",
+      "hs": "--",
+      "id": 1266,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,5951",
+      "longitude": "11,5291",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Barbian Kollmann",
+      "p": "1012.5",
+      "q": "--",
+      "rh": "50",
+      "t": "13.8",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "17.6",
+      "sd": "01:42",
+      "gs": "695",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1266/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 495,
+      "categoryId": 1,
+      "code": "89190MS",
+      "dd": "NE",
+      "ff": "6.8",
+      "hs": "--",
+      "id": 1428,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,4423",
+      "longitude": "11,2525",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "Kaltern Oberplanitzing",
+      "p": "1013.4",
+      "q": "--",
+      "rh": "47",
+      "t": "14.7",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "12.6",
+      "sd": "03:28",
+      "gs": "669",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1428/40/de?scat_id=1"
+        }
+      ]
+    },
+    {
+      "altitude": 586,
+      "categoryId": 1,
+      "code": "22210MS",
+      "dd": "S",
+      "ff": "10.1",
+      "hs": "--",
+      "id": 1429,
+      "lastUpdated": "2021-05-18T09:50:00",
+      "latitude": "46,7824",
+      "longitude": "11,2296",
+      "lwdType": null,
+      "n": "0.0",
+      "name": "St. Martin in Passeier",
+      "p": "1013.5",
+      "q": "--",
+      "rh": "63",
+      "t": "11.9",
+      "vaxcode": null,
+      "w": "--",
+      "wMax": "13.3",
+      "sd": "01:08",
+      "gs": "262",
+      "wt": "--",
+      "visibility": 11,
+      "zoomLevel": 9,
+      "measurements": [
+        {
+          "code": "LT",
+          "description": "Lufttemperatur",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/2/de?scat_id=1"
+        },
+        {
+          "code": "N",
+          "description": "Niederschlag",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/3/de?scat_id=1"
+        },
+        {
+          "code": "WR",
+          "description": "Windrichtung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/5/de?scat_id=1"
+        },
+        {
+          "code": "WG",
+          "description": "Windgeschwindigkeit",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/6/de?scat_id=1"
+        },
+        {
+          "code": "LF",
+          "description": "relative Luftfeuchte",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/8/de?scat_id=1"
+        },
+        {
+          "code": "LD.RED",
+          "description": "Luftdruck",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/9/de?scat_id=1"
+        },
+        {
+          "code": "GS",
+          "description": "Globalstrahlung",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/30/de?scat_id=1"
+        },
+        {
+          "code": "SD",
+          "description": "Sonnenscheindauer",
+          "imageUrl": "http://daten.buergernetz.bz.it/services/weather/graphics/charts/1429/40/de?scat_id=1"
+        }
+      ]
+    }
+  ]
+}

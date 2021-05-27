@@ -1,47 +1,47 @@
 import React, { useEffect, useState, Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Plot from 'react-plotly.js';
 import FilterCustom from "../FilterCustom";
 import Select from 'react-select'
+import Form from "react-bootstrap/Form";
 // Unique id generator
 import { nanoid } from 'nanoid';
+import { useDebounce } from "react-use";
 
-function HistogramPlot(props){
+function HexbinMap(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
     const [optionsNc, setNcOptions] = useState(props.optionsNc)
     const [optionsC, setCOptions] = useState(props.optionsC)
 
     const [variable, setVariable] = useState(props.variable ? props.variable : null)
     const [animation_variable, setAnimationVariable] = useState(props.an_value ? props.an_value : null)
-    const [colour, setColourVar] = useState(props.colour ? props.colour : null)
-    const [fa_col, setFa_col] = useState(props.fa_col ? props.fa_col : null)
-    const [fa_row, setFa_row] = useState(props.fa_row ? props.fa_row : null)
+    const [aggmethod, setMethod] = useState(props.m_value ? props.m_value : 'count')
+    const [nr_hexs, setNrHexs] = useState(props.nr_hexs ? String(props.nr_hexs) : null)
     const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
     const [uid, setUID] = useState(nanoid())
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
-        if (variable){
+        if (variable && nr_hexs && nr_hexs != '' && nr_hexs > 0){
             const opts = {
                 method: "POST",
                 body: JSON.stringify({
                     'value': variable,
-                    'colour': colour,
-                    'fa_col': fa_col,
-                    'fa_row': fa_row,
+                    'method': aggmethod,
+                    'nr_hexs': nr_hexs,
                     'f_value': f_value,
                     'animation_variable': animation_variable,
                     'uid':uid,
                     'path':window.location.pathname
                 }),
                 headers:{
-                    "Content-Type": "application/json",
+                    "content-type": "application/json",
                 }
             }
             
-            fetch('/api/histogramplot', opts)
+            fetch('/api/hexbinmap', opts)
                 .then(res => {
                     if (res.ok){
                         return res.json()
@@ -56,7 +56,7 @@ function HistogramPlot(props){
                     }
                 })
         }
-    }, [variable, animation_variable, colour, fa_col, fa_row, filter_btn_clicks])
+    }, [variable, animation_variable, aggmethod, nr_hexs, filter_btn_clicks])
    
     const customStyles = {
         control: (provided, state) => ({
@@ -71,10 +71,21 @@ function HistogramPlot(props){
         })
     }
 
+    // Toggle var for options and remove handler for removing plot
     const [toggleOption, settoggleOption] = useState({'display':'block'})
     const handleRmvBtn = () =>{
-        props.removeButtonHandler(props.index, 'histogram-plot-'+uid)
+        props.removeButtonHandler(props.index, 'hexbin-map-'+uid)
     }
+
+    // Debounce nr_hex number input
+    const [val, setVal] = useState(props.nr_hexs ? String(props.nr_hexs) : null);
+    const [, cancel] = useDebounce(
+        () => {
+            setNrHexs(val)
+        },
+        850,
+        [val]
+    );
 
     return(
         <div>
@@ -114,11 +125,11 @@ function HistogramPlot(props){
             <div style={toggleOption}>
                 <Row>
                     <Col>
-                        <label id={"hist-variable-label-"+uid}>Variables</label>
+                        <label id={"map-hexbin-variable-label-"+uid}>Variables</label>
                         <Select
-                            aria-labelledby={"hist-variable-label-"+uid}
-                            name="hist-variable"
-                            defaultValue={props.optionsNc.filter(option => option.value === props.variable)}
+                            aria-labelledby={"map-hexbin-variable-label-"+uid}
+                            name="map-hexbin-variable"
+                            defaultValue={props.optionsAll.filter(option => option.value === props.variable)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"
@@ -129,27 +140,10 @@ function HistogramPlot(props){
                         />
                     </Col>
                     <Col>
-                        <label id={"hist-colour-var-label-"+uid}>Colour</label>
+                        <label id={"map-hexbin-animation-variable-label-"+uid}>Animation variable</label>
                         <Select
-                            aria-labelledby={"hist-colour-var-label-"+uid}
-                            name="hist-colour-var"
-                            defaultValue={props.optionsC.filter(option => option.value === props.colour)}
-                            styles={customStyles}
-                            options={optionsC}
-                            className="basic-single"
-                            classNamePrefix="select"
-                            isClearable={true}
-                            isSearchable={true}
-                            onChange={(value, {action}) => setColourVar(value ? value.value : null)}
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <label id={"hist-animation-variable-label-"+uid}>Animation variable</label>
-                        <Select
-                            aria-labelledby={"hist-animation-variable-label-"+uid}
-                            name="hist-animation-variable"
+                            aria-labelledby={"map-hexbin-animation-variable-label-"+uid}
+                            name="map-hexbin-animation-variable"
                             defaultValue={props.optionsAll.filter(option => option.value === props.an_value)}
                             styles={customStyles}
                             options={optionsAll}
@@ -160,35 +154,37 @@ function HistogramPlot(props){
                             onChange={(value, {action}) => setAnimationVariable(value ? value.value : null)}
                         /> 
                     </Col>
+                </Row>
+                <Row>
                     <Col>
-                        <label id={"hist-fa_col-label-"+uid}>Facet col</label>
+                        <label id={"map-hexbin-method-label-"+uid}>Aggregation method</label>
                         <Select
-                            aria-labelledby={"hist-fa_col-label-"+uid}
-                            name="hist-fa_col"
-                            defaultValue={props.optionsC.filter(option => option.value === props.fa_col)}
+                            defaultValue={props.m_value ? {'label':props.m_value, 'value':props.m_value}:{'label': 'count', 'value':'count'}}
+                            aria-labelledby={"map-hexbin-method-label-"+uid}
+                            name="map-hexbin-method"
                             styles={customStyles}
-                            options={optionsC}
+                            options={[
+                                {'label': 'count', 'value':'count'},
+                                {'label': 'mean', 'value':'mean'},
+                                {'label': 'median', 'value':'median'},
+                                ]}
                             className="basic-single"
                             classNamePrefix="select"
                             isClearable={true}
                             isSearchable={true}
-                            onChange={(value, {action}) => setFa_col(value ? value.value : null)}
+                            onChange={(value, {action}) => setMethod(value ? value.value : null)}
                         />
                     </Col>
                     <Col>
-                        <label id={"hist-fa_row-label-"+uid}>Facet row</label>
-                        <Select
-                            aria-labelledby={"hist-fa_row-label-"+uid}
-                            name="hist-fa_row"
-                            defaultValue={props.optionsC.filter(option => option.value === props.fa_row)}
-                            styles={customStyles}
-                            options={optionsC}
-                            className="basic-single"
-                            classNamePrefix="select"
-                            isClearable={true}
-                            isSearchable={true}
-                            onChange={(value, {action}) => setFa_row(value ? value.value : null)}
-                        />
+                        <Form.Group controlId={'preferredbins'+uid}>
+                            <Form.Label>Amount of preferred bins</Form.Label>
+                            <Form.Control  type="number"
+                                value={val}
+                                onChange={({currentTarget}) =>{
+                                    setVal(currentTarget.value)
+                                }}
+                            />
+                        </Form.Group>
                     </Col>
                 </Row>
                 <Row>
@@ -197,7 +193,6 @@ function HistogramPlot(props){
                             label='Filters: are applied on plot creation or by pressing the "Apply" button'
                             setFilter_btn_clicks={setFilter_btn_clicks}
                             count={filter_btn_clicks}
-                            f_value={props.f_value ? props.f_value : null}
                         />
                     </Col>
                 </Row>
@@ -206,4 +201,4 @@ function HistogramPlot(props){
     );
 }
 
-export default HistogramPlot;
+export default HexbinMap;

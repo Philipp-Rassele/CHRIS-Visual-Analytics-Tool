@@ -27,6 +27,7 @@ code {
   background-color: grey;
 }
 
+
 .carousel-indicators .active{
   background-color: black;
 }
@@ -34,8 +35,13 @@ code {
 .carousel-caption {
   color: black;
   font-size: 0.8rem;
+
 }
 
 .carousel-caption p{
   margin-bottom: 0px;
+}
+
+.carousel-caption p span{
+  background-color: white;
 }

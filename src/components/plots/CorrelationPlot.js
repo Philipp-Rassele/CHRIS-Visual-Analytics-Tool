@@ -4,44 +4,35 @@ import Button from "react-bootstrap/Button";
 import Plot from 'react-plotly.js';
 import FilterCustom from "../FilterCustom";
 import Select from 'react-select'
+// Unique id generator
+import { nanoid } from 'nanoid';
 
 function CorrelationPlot(props){
-    // Think about handing down options so not for each plot the api is called unecessary
-    const [optionsNc, setNcOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-            setNcOptions(data.options)
-        })
-    }, [])
+    const [optionsAll, setAllOptions] = useState(props.optionsAll)
+    const [optionsNc, setNcOptions] = useState(props.optionsNc)
+    const [optionsC, setCOptions] = useState(props.optionsC)
 
-    const [optionsC, setCOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-            setCOptions(data.options)
-        })
-    }, [])
-
-    const [optionsAll, setAllOptions] = useState([])
-    useEffect(() => {
-        fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-            setAllOptions(data.options)
-        })
-    }, [])
-
-    const [variable, setVariable] = useState()
-    const [method, setMethod] = useState('pearson')
+    const [variable, setVariable] = useState(props.variable ? props.variable : null)
+    const [method, setMethod] = useState(props.m_value ? props.m_value : 'pearson')
+    const [uid, setUID] = useState(nanoid())
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
         if (variable && variable.length > 1){
             let m_arr = []
-            variable.forEach((item) => m_arr.push(item.value))
+            if (typeof(variable[0]) === 'object'){
+                variable.forEach((item) => m_arr.push(item.value))
+            }else{
+                m_arr = variable
+            }
 
             const opts = {
                 method: "POST",
                 body: JSON.stringify({
                     'value': m_arr,
                     'method': method,
+                    'uid':uid,
+                    'path':window.location.pathname
                 }),
                 headers:{
                     "Content-Type": "application/json",
@@ -72,11 +63,15 @@ function CorrelationPlot(props){
             outline:state.isFocused ? 0 : provided.outline,
             boxShadow: state.isFocused ? '0 0 0 .2rem rgba(0,123,255,.25)' : provided.boxShadow
           }),
+        menu: (provided, state) => ({
+            ...provided,
+            zIndex:2
+        })
     }
 
     const [toggleOption, settoggleOption] = useState({'display':'block'})
     const handleRmvBtn = () =>{
-        props.removeButtonHandler(props.index)
+        props.removeButtonHandler(props.index, 'correlation-plot-'+uid)
     }
 
     return(
@@ -121,6 +116,7 @@ function CorrelationPlot(props){
                         <Select
                             aria-labelledby="corr-variable-label"
                             name="corr-variable"
+                            defaultValue={props.optionsAll.filter(option => props.variable ? props.variable.includes(option.value) : false)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-multiple"
@@ -139,7 +135,7 @@ function CorrelationPlot(props){
                             aria-labelledby="corr-method-label"
                             name="corr-method"
                             styles={customStyles}
-                            defaultValue= {{'label':'pearson', 'value':'pearson'}}
+                            defaultValue= {props.m_value ? {'label':props.m_value, 'value':props.m_value}:{'label':'pearson', 'value':'pearson'}}
                             options={[{'label':'pearson', 'value':'pearson'}
                             ,{'label':'kendall', 'value':'kendall'}
                             ,{'label':'spearman', 'value':'spearman'}]}
