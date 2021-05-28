@@ -11,3 +11,6 @@ To create an environment from a ".yml" file just perform the following command:
 ### conda env create -f environment.yml
 
 For the frontend all the necessary settings are provided through the "package.json" and "package-lock.json" files.
+
+# Provided data
+To utilise the provided data unpack the "data.rar" in the data folder.
