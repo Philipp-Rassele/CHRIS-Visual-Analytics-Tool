@@ -153,7 +153,7 @@ function LinePlot(props){
                             name="line-animation-variable"
                             defaultValue={props.optionsNc.filter(option => option.value === props.an_value)}
                             styles={customStyles}
-                            options={optionsAll}
+                            options={optionsNc}
                             className="basic-single"
                             classNamePrefix="select"
                             isClearable={true}
@@ -166,7 +166,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-normal-fa_col-label-"+uid}
                             name="line-normal-fa_col"
-                            defaultValue={props.optionsNc.filter(option => option.value === props.fa_col)}
+                            defaultValue={props.optionsC.filter(option => option.value === props.fa_col)}
                             styles={customStyles}
                             options={optionsC}
                             className="basic-single"
@@ -181,7 +181,7 @@ function LinePlot(props){
                         <Select
                             aria-labelledby={"line-normal-fa_row-label-"+uid}
                             name="line-normal-fa_row"
-                            defaultValue={props.optionsNc.filter(option => option.value === props.fa_row)}
+                            defaultValue={props.optionsC.filter(option => option.value === props.fa_row)}
                             styles={customStyles}
                             options={optionsC}
                             className="basic-single"

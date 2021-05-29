@@ -112,7 +112,7 @@ function ScatterMap(props){
                         <Select
                             aria-labelledby={"map-sc-variable-label-"+uid}
                             name="map-sc-variable"
-                            defaultValue={props.optionsNc.filter(option => option.value === props.variable)}
+                            defaultValue={props.optionsAll.filter(option => option.value === props.variable)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"
@@ -127,7 +127,7 @@ function ScatterMap(props){
                         <Select
                             aria-labelledby={"map-sc-animation-variable-label-"+uid}
                             name="map-sc-animation-variable"
-                            defaultValue={props.optionsNc.filter(option => option.value === props.an_value)}
+                            defaultValue={props.optionsAll.filter(option => option.value === props.an_value)}
                             styles={customStyles}
                             options={optionsAll}
                             className="basic-single"

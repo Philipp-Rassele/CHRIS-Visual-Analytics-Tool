@@ -120,7 +120,7 @@ function HistogramPlot(props){
                             name="hist-variable"
                             defaultValue={props.optionsNc.filter(option => option.value === props.variable)}
                             styles={customStyles}
-                            options={optionsAll}
+                            options={optionsNc}
                             className="basic-single"
                             classNamePrefix="select"
                             isClearable={true}
