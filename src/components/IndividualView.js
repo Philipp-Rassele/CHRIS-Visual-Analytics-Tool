@@ -188,6 +188,7 @@ function IndividualView(props){
     const updateInteractiveFigureSize = (value, block_id, plot_id) => {
         let w = window.innerWidth;
         let el = document.getElementById(block_id)
+        console.log(plot_id)
         if (w < 576){
             el.removeAttribute('class')
             el.classList.add('col-'+value)

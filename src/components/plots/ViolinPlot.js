@@ -42,7 +42,7 @@ function ViolinPlot(props){
     const [fa_row, setFa_row] = useState(props.fa_row ? props.fa_row : null)
     const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
-    const [uid, setUID] = useState(props.index ? props.index : nanoid())
+    const [uid, setUID] = useState(nanoid())
     // const uid = nanoid()
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
@@ -107,7 +107,8 @@ function ViolinPlot(props){
 //     lg={4} md={12} xs={12}
     const updateInteractiveFigureSize = (value) => {
         if (props.index && props.updateInteractiveFigureSize){
-            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+props.index)
+            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+uid)
+            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
         }
         // else{
         //     let w = window.innerWidth;
@@ -138,7 +139,7 @@ function ViolinPlot(props){
         <div>
         {/* lg={4} md={12} xs={12} id={'block-plot'+uid} */}
         {/* xs={xs} md={md} lg={lg}  */}
-            <Row noGutters={true}>
+            <Row noGutters={true} >
                 <Col id={'plot-'+uid}>
                     <Plot 
                         data={figure.data}
@@ -156,7 +157,7 @@ function ViolinPlot(props){
                 </Col>
                 <Col className="pr-0 pl-0">
                     <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    value={(window.innerWidth < 576) ? 12 : 4}/>
+                    value={(window.innerWidth < 992) ? 12 : 4}/>
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {

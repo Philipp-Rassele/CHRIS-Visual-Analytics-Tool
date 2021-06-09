@@ -90,14 +90,14 @@ function HexbinMap(props){
 
     const updateInteractiveFigureSize = (value) => {
         if (props.index && props.updateInteractiveFigureSize){
-            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+uid)
+            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+props.index)
         }
     }
 
     return(
         <div>
             <Row noGutters={true}>
-                <Col id={'plot-'+uid}>
+                <Col id={'plot-'+props.index}>
                     <Plot 
                         data={figure.data}
                         layout={figure.layout}
