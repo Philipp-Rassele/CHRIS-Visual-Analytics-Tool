@@ -8,7 +8,6 @@ import Form from "react-bootstrap/Form";
 // Unique id generator
 import { nanoid } from 'nanoid';
 import { useDebounce } from "react-use";
-import SliderCustom from "../SliderCustom";
 
 function HexbinMap(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
@@ -21,7 +20,7 @@ function HexbinMap(props){
     const [nr_hexs, setNrHexs] = useState(props.nr_hexs ? String(props.nr_hexs) : null)
     const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
-    const [uid, setUID] = useState(props.index ? props.index : nanoid())
+    const [uid, setUID] = useState(nanoid())
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
@@ -88,16 +87,10 @@ function HexbinMap(props){
         [val]
     );
 
-    const updateInteractiveFigureSize = (value) => {
-        if (props.index && props.updateInteractiveFigureSize){
-            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+props.index)
-        }
-    }
-
     return(
         <div>
             <Row noGutters={true}>
-                <Col id={'plot-'+props.index}>
+                <Col>
                     <Plot 
                         data={figure.data}
                         layout={figure.layout}
@@ -109,12 +102,7 @@ function HexbinMap(props){
                 </Col>
             </Row>
             <Row className="justify-content-center">
-                <Col className="pr-3 pl-3" xs="auto">
-                    <p>Size:</p>
-                </Col>
-                <Col className="pr-0 pl-0">
-                    <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    value={(window.innerWidth < 576) ? 12 : 4}/>
+                <Col>
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {

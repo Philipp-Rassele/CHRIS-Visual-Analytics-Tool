@@ -656,8 +656,7 @@ def get_histogram_plot():
 
             # fig["layout"]["sliders"] = [sliders_dict]
 
-            fig = px.histogram(dff.sort_values(by=[an_value, value]), x=value
-                        , color=colour, facet_col=fa_col, facet_row=fa_row
+            fig = px.histogram(dff.sort_values(by=[an_value, value]), x=value, color=colour, facet_col=fa_col, facet_row=fa_row
                         , animation_frame=an_value
                         # , nbins=20
                         # , range_y=[0, dfrc['count('+str(value if not colour else colour)+')'].max()]
@@ -688,8 +687,7 @@ def get_histogram_plot():
                 h = 2*(iqr/(len(dff.index)**(1/3.0)))
                 range_d = abs(dff[value].max()-dff[value].min())
                 cbins = round(range_d/h)
-            fig = px.histogram(dff, x=value, color=colour, 
-                            #y='x0_age',
+            fig = px.histogram(dff, x=value, color=colour,
                             facet_col=fa_col, facet_row=fa_row, nbins=cbins)
 
             fig.update_layout(paper_bgcolor='white', plot_bgcolor='white')
@@ -898,17 +896,15 @@ def get_hexbin_map():
                 agf = np.average
             elif m_value == 'median':
                 agf = np.median
-                
+
         fig = ff.create_hexbin_mapbox(
-            data_frame=dff, lat='lat', lon='lon', 
-            color=value if m_value and m_value != 'count' else None,
+            data_frame=dff, lat='lat', lon='lon', color=value,
             nx_hexagon=nr_hexs, min_count=1,
             mapbox_style='open-street-map',
-            labels={'color':m_value+" "+value if m_value else "count "+value},
+            labels={'color':m_value+" "+value if m_value else "Count "+value},
             color_continuous_scale=colorcet.bmy,
             agg_func=agf, animation_frame=an_value
         )
-
         # Add hexbin map info to session
         if uid and path:
             td = {}

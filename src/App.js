@@ -24,18 +24,18 @@ function App() {
   const [open, setOpen] = useState({'display':'block'});
   // Options
   const [optionsAll, setAllOptions] = useState([])
-  useEffect(() => {
-      fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-          setAllOptions(data.options)
-      })
-  }, [])
+    useEffect(() => {
+        fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
+            setAllOptions(data.options)
+        })
+    }, [])
 
   const [optionsNc, setNcOptions] = useState([])
-  useEffect(() => {
-      fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-          setNcOptions(data.options)
-      })
-  }, [])
+    useEffect(() => {
+        fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
+            setNcOptions(data.options)
+        })
+    }, [])
 
     const [optionsC, setCOptions] = useState([])
     useEffect(() => {

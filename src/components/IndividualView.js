@@ -51,162 +51,107 @@ function IndividualView(props){
         const nid = nanoid()+plotList.length
         if (nplot == 'violin_plot'){
             props.updateList(plotList => [...plotList, 
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
+                <Col key={nid} lg={4} md={12} xs={12}>
                     {/* lg={4} md={12} xs={12} */}
                     <ViolinPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
                         optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
                     />
                 </Col>
              ]
             );
         }else if (nplot == 'bar_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <Barplot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'bar_pyramid_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <BarPyramidPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'choropleth_map'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <ChoroplethMap removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'confidence_interval'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <ConfidenceInterval removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'correlation_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <CorrelationPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'histogram_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <HistogramPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'line_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <LinePlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'scatter_map'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <ScatterMap removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
         }else if (nplot == 'hexbin_map'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot'+nid}>
-                    {/* lg={4} md={12} xs={12} */}
+                <Col key={nid} lg={4} md={12} xs={12}>
                     <HexbinMap removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
                         optionsNc={props.optionsNc}
-                        optionsC={props.optionsC}
-                        updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    />
+                        optionsC={props.optionsC}/>
                 </Col>
             ]);
-        }
-    }
-
-    
-    //     lg={4} md={12} xs={12}
-    const updateInteractiveFigureSize = (value, block_id, plot_id) => {
-        let w = window.innerWidth;
-        let el = document.getElementById(block_id)
-        console.log(plot_id)
-        if (w < 576){
-            el.removeAttribute('class')
-            el.classList.add('col-'+value)
-            el.classList.add('col-md-12')
-            el.classList.add('col-lg-4')
-            document.querySelector('[id='+plot_id+']').querySelector('[data-title="Autoscale"]').click()
-        }else if(w > 768 && w < 992){
-            el.removeAttribute('class')
-            el.classList.add('col-12')
-            el.classList.add('col-md-'+value)
-            el.classList.add('col-lg-4')
-            document.querySelector('[id='+plot_id+']').querySelector('[data-title="Autoscale"]').click()
-        }else if (w > 991){
-            el.removeAttribute('class')
-            el.classList.add('col-12')
-            el.classList.add('col-md-12')
-            el.classList.add('col-lg-'+value)
-            document.querySelector('[id='+plot_id+']').querySelector('[data-title="Autoscale"]').click()
         }
     }
 
@@ -248,7 +193,7 @@ function IndividualView(props){
                             />
                             <Carousel.Caption>
                                 <p><span>Bar pyramid plot</span></p>
-                                <p><span>Usefull to create population pyramids</span></p>
+                                <p><span>Usefull to create age pyramids</span></p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>

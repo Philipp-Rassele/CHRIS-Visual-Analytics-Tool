@@ -6,7 +6,6 @@ import FilterCustom from "../FilterCustom";
 import Select from 'react-select'
 // Unique id generator
 import { nanoid } from 'nanoid';
-import SliderCustom from "../SliderCustom";
 
 function ChoroplethMap(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
@@ -18,7 +17,7 @@ function ChoroplethMap(props){
     const [method, setMethod] = useState(props.m_value ? props.m_value : 'mean')
     const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
     const [filter_btn_clicks, setFilter_btn_clicks] = useState(0)
-    const [uid, setUID] = useState(props.index ? props.index : nanoid())
+    const [uid, setUID] = useState(nanoid())
 
     const [figure, updateFigure] = useState({data: [], layout: {autosize: true}, frames: [], config: {displaylogo: false}})
     useEffect(() => {
@@ -74,16 +73,10 @@ function ChoroplethMap(props){
         props.removeButtonHandler(props.index, 'choropleth-map-'+uid)
     }
 
-    const updateInteractiveFigureSize = (value) => {
-        if (props.index && props.updateInteractiveFigureSize){
-            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+uid)
-        }
-    }
-
     return(
         <div>
             <Row noGutters={true}>
-                <Col id={'plot-'+uid}>
+                <Col>
                     <Plot 
                         data={figure.data}
                         layout={figure.layout}
@@ -95,12 +88,7 @@ function ChoroplethMap(props){
                 </Col>
             </Row>
             <Row className="justify-content-center">
-                <Col className="pr-3 pl-3" xs="auto">
-                    <p>Size:</p>
-                </Col>
-                <Col className="pr-0 pl-0">
-                    <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    value={(window.innerWidth < 576) ? 12 : 4}/>
+                <Col>
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {

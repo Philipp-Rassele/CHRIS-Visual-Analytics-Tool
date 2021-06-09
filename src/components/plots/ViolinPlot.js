@@ -10,31 +10,8 @@ import SliderCustom from "../SliderCustom";
 
 function ViolinPlot(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
-    useEffect(() => {
-        if (! props.optionsAll){
-            fetch('/api/dropdown-all-options').then(res => res.json()).then(data => {
-                setAllOptions(data.options)
-            })
-        }
-    }, [])
-
     const [optionsNc, setNcOptions] = useState(props.optionsNc)
-    useEffect(() => {
-        if (! props.optionsNc){
-            fetch('/api/dropdown-non-categorical-options').then(res => res.json()).then(data => {
-                setNcOptions(data.options)
-            })
-        }
-    }, [])
-
     const [optionsC, setCOptions] = useState(props.optionsC)
-    useEffect(() => {
-        if (! props.optionsC){
-            fetch('/api/dropdown-categorical-options').then(res => res.json()).then(data => {
-                setCOptions(data.options)
-            })
-        }
-    }, [])
     
     const [variable, setVariable] = useState(props.variable ? props.variable : null)
     const [animation_variable, setAnimationVariable] = useState(props.an_value ? props.an_value : null)
@@ -104,40 +81,35 @@ function ViolinPlot(props){
         props.removeButtonHandler(props.index, 'violin-plot-'+uid)
     }
 
+    const [xs, updateXS] = useState(12)
+    const [md, updateMD] = useState(12)
+    const [lg, updateLG] = useState(4)
 //     lg={4} md={12} xs={12}
     const updateInteractiveFigureSize = (value) => {
-        if (props.index && props.updateInteractiveFigureSize){
-            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+uid)
+        let w = window.innerWidth;
+        if (w < 576){
+            updateXS(value)
+            updateMD(12)
+            updateLG(12)
+            console.log('test')
+            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+        }else if(w > 768 && w < 992){
+            updateXS(4)
+            updateMD(value)
+            updateLG(12)
+            console.log('test')
+            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+        }else if (w > 991){
+            updateXS(4)
+            updateMD(12)
+            updateLG(value)
+            console.log('test')
             document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
         }
-        // else{
-        //     let w = window.innerWidth;
-        //     let el = document.getElementById('block-plot'+uid)
-        //     if (w < 576){
-        //         el.removeAttribute('class')
-        //         el.classList.add('col-'+value)
-        //         el.classList.add('col-md-12')
-        //         el.classList.add('col-lg-4')
-        //         document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
-        //     }else if(w > 768 && w < 992){
-        //         el.removeAttribute('class')
-        //         el.classList.add('col-12')
-        //         el.classList.add('col-md-'+value)
-        //         el.classList.add('col-lg-4')
-        //         document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
-        //     }else if (w > 991){
-        //         el.removeAttribute('class')
-        //         el.classList.add('col-12')
-        //         el.classList.add('col-md-12')
-        //         el.classList.add('col-lg-'+value)
-        //         document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
-        //     }
-        // }
     }
     
     return(
-        <div>
-        {/* lg={4} md={12} xs={12} id={'block-plot'+uid} */}
+        <Col>
         {/* xs={xs} md={md} lg={lg}  */}
             <Row noGutters={true} >
                 <Col id={'plot-'+uid}>
@@ -152,12 +124,11 @@ function ViolinPlot(props){
                 </Col>
             </Row>
             <Row className="justify-content-center align-items-center">
-                <Col className="pr-3 pl-3" xs="auto">
+                {/* <Col className="pr-3 pl-3" xs="auto">
                     <p>Size:</p>
-                </Col>
+                </Col> */}
                 <Col className="pr-0 pl-0">
-                    <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
-                    value={(window.innerWidth < 992) ? 12 : 4}/>
+                    {/* <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}/> */}
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {
@@ -253,7 +224,7 @@ function ViolinPlot(props){
                     </Col>
                 </Row>
             </div>
-        </div>
+        </Col>
     );
 }
 
