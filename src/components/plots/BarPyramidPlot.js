@@ -7,6 +7,7 @@ import Select from 'react-select'
 import { useDebounce } from "react-use";
 // Unique id generator
 import { nanoid } from 'nanoid';
+import SliderCustom from "../SliderCustom";
 
 function BarPyramidPlot(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
@@ -17,7 +18,7 @@ function BarPyramidPlot(props){
     const [y_variable, setYVariable] = useState(props.y_value ? props.y_value : null)
     const [binary_var, setBinaryVar] = useState(props.bi_value ? props.bi_value : null)
     const [bins, setBinsVar] = useState(props.bins ? String(props.bins) : null)
-    const [uid, setUID] = useState(nanoid())
+    const [uid, setUID] = useState(props.index ? props.index : nanoid())
 
     const [method, setMethod] = useState(props.method ? props.method : 'count')
     const [f_value, setF_value] = useState(props.f_value ? props.f_value : null)
@@ -90,11 +91,17 @@ function BarPyramidPlot(props){
         850,
         [val]
     );
+    
+    const updateInteractiveFigureSize = (value) => {
+        if (props.index && props.updateInteractiveFigureSize){
+            props.updateInteractiveFigureSize(value, 'block-plot'+props.index, 'plot-'+uid)
+        }
+    }
 
     return(
         <div>
             <Row noGutters={true}>
-                <Col>
+                <Col id={'plot-'+uid}>
                     <Plot 
                         data={figure.data}
                         layout={figure.layout}
@@ -106,7 +113,12 @@ function BarPyramidPlot(props){
                 </Col>
             </Row>
             <Row className="justify-content-center">
-                <Col>
+                <Col className="pr-3 pl-3" xs="auto">
+                    <p>Size:</p>
+                </Col>
+                <Col className="pr-0 pl-0">
+                    <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
+                    value={(window.innerWidth < 576) ? 12 : 4}/>
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {

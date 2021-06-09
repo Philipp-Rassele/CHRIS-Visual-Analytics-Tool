@@ -3,7 +3,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup"
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Plot from 'react-plotly.js';
 import FilterCustom from "./FilterCustom";
 import Select from 'react-select'
@@ -290,13 +291,21 @@ function ClusteringView(props){
                             <Col>
                                 <Form.Group>
                                     <Form.Label>Minimum cluster size</Form.Label>
-                                    <Form.Control type="number" min={1} 
-                                        placeholder='Minimum points that a cluster must contain'
-                                        value={val}
-                                        onChange={({currentTarget}) =>{
-                                            setVal(currentTarget.value)
-                                        }}
-                                    />
+                                    <OverlayTrigger
+                                        overlay={
+                                            <Tooltip id={`tooltip-mcs`+uid}>
+                                                Minimum amount of points the clustering algorithms considers as a cluster.
+                                            </Tooltip>
+                                        }
+                                    >
+                                        <Form.Control type="number" min={1} 
+                                            placeholder='Minimum points that are considered as a cluster'
+                                            value={val}
+                                            onChange={({currentTarget}) =>{
+                                                setVal(currentTarget.value)
+                                            }}
+                                        />
+                                    </OverlayTrigger>
                                 </Form.Group>
                             </Col>
                             <Col>
@@ -356,7 +365,7 @@ function ClusteringView(props){
                             <Col>
                             <Form.Group controlId={"formBasicCheckbox"+uid} >
                                 <Form.Check type="checkbox" 
-                                    label="Activate selection of demographic groups" 
+                                    label="Activate selection of geographical groups of interest" 
                                     // onChange={(e) => {
                                     //     setDemoGroupSelect(e.target.checked)
                                     // }}
