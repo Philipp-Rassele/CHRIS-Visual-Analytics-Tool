@@ -51,7 +51,7 @@ function IndividualView(props){
         const nid = nanoid()+plotList.length
         if (nplot == 'violin_plot'){
             props.updateList(plotList => [...plotList, 
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     {/* lg={4} md={12} xs={12} */}
                     <ViolinPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
@@ -64,7 +64,7 @@ function IndividualView(props){
             );
         }else if (nplot == 'bar_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <Barplot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -74,7 +74,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'bar_pyramid_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <BarPyramidPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -84,7 +84,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'choropleth_map'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <ChoroplethMap removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -94,7 +94,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'confidence_interval'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <ConfidenceInterval removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -104,7 +104,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'correlation_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <CorrelationPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -114,7 +114,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'histogram_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <HistogramPlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -124,7 +124,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'line_plot'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <LinePlot removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -134,7 +134,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'scatter_map'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <ScatterMap removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}
@@ -144,7 +144,7 @@ function IndividualView(props){
             ]);
         }else if (nplot == 'hexbin_map'){
             props.updateList(plotList => [...plotList,
-                <Col key={nid} lg={4} md={12} xs={12}>
+                <Col key={nid} lg={4} md={12} xs={12} id={'block-plot-'+nid}>
                     <HexbinMap removeButton={true} removeButtonHandler={props.removePlotAction}
                         index={nid}
                         optionsAll={props.optionsAll}

@@ -8,6 +8,8 @@ import Form from "react-bootstrap/Form";
 // Unique id generator
 import { nanoid } from 'nanoid';
 import { useDebounce } from "react-use";
+import SliderCustom from "../SliderCustom";
+import Plotly from 'plotly.js';
 
 function HexbinMap(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
@@ -87,6 +89,31 @@ function HexbinMap(props){
         [val]
     );
 
+    const updateInteractiveFigureSize = (value) => {
+        let w = window.innerWidth;
+        console.log(props.index)
+        console.log(uid)
+        let el = document.getElementById('block-plot-'+props.index)
+        
+        if (w < 576){
+            el.removeAttribute('class')
+            el.classList.add('col-'+value)
+            el.classList.add('col-md-12')
+            el.classList.add('col-lg-4')
+        }else if(w > 768 && w < 992){
+            el.removeAttribute('class')
+            el.classList.add('col-12')
+            el.classList.add('col-md-'+value)
+            el.classList.add('col-lg-4')
+        }else if (w > 991){
+            el.removeAttribute('class')
+            el.classList.add('col-12')
+            el.classList.add('col-md-12')
+            el.classList.add('col-lg-'+value)
+        }
+        Plotly.relayout(document.getElementById('plot-divId-'+uid), {autosize: true})
+    }
+
     return(
         <div>
             <Row noGutters={true}>
@@ -98,11 +125,18 @@ function HexbinMap(props){
                         config={figure.config}
                         useResizeHandler={true}
                         className="d-flex h-auto"
+                        divId={'plot-divId-'+uid}
                     />
                 </Col>
             </Row>
             <Row className="justify-content-center">
-                <Col>
+                <Col className="pr-3 pl-3" xs="auto">
+                    <p>Size:</p>
+                </Col>
+                <Col className="pr-0 pl-0">
+                    <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
+                        value={(window.innerWidth < 992) ? 12 : 4}
+                    />
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {

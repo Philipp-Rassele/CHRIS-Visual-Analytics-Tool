@@ -78,7 +78,7 @@ function SliderCustom(props){
             <Slider
                 rootStyle={sliderStyle /* inline styles for the outer div. Can also use className prop. */}
                 domain={[1, 12]}
-                values={[12]}
+                values={[props.value]}
                 step={1}
                 onSlideEnd={(e) => {props.updateInteractiveFigureSize(e[0])}}
             >

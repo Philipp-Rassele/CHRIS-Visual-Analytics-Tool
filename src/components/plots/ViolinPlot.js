@@ -7,6 +7,7 @@ import Select from 'react-select'
 // Unique id generator
 import { nanoid } from 'nanoid';
 import SliderCustom from "../SliderCustom";
+import Plotly from 'plotly.js';
 
 function ViolinPlot(props){
     const [optionsAll, setAllOptions] = useState(props.optionsAll)
@@ -81,35 +82,34 @@ function ViolinPlot(props){
         props.removeButtonHandler(props.index, 'violin-plot-'+uid)
     }
 
-    const [xs, updateXS] = useState(12)
-    const [md, updateMD] = useState(12)
-    const [lg, updateLG] = useState(4)
 //     lg={4} md={12} xs={12}
     const updateInteractiveFigureSize = (value) => {
         let w = window.innerWidth;
+        console.log(props.index)
+        console.log(uid)
+        let el = document.getElementById('block-plot-'+props.index)
+        
         if (w < 576){
-            updateXS(value)
-            updateMD(12)
-            updateLG(12)
-            console.log('test')
-            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+            el.removeAttribute('class')
+            el.classList.add('col-'+value)
+            el.classList.add('col-md-12')
+            el.classList.add('col-lg-4')
         }else if(w > 768 && w < 992){
-            updateXS(4)
-            updateMD(value)
-            updateLG(12)
-            console.log('test')
-            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+            el.removeAttribute('class')
+            el.classList.add('col-12')
+            el.classList.add('col-md-'+value)
+            el.classList.add('col-lg-4')
         }else if (w > 991){
-            updateXS(4)
-            updateMD(12)
-            updateLG(value)
-            console.log('test')
-            document.querySelector('[id=plot-'+uid+']').querySelector('[data-title="Autoscale"]').click()
+            el.removeAttribute('class')
+            el.classList.add('col-12')
+            el.classList.add('col-md-12')
+            el.classList.add('col-lg-'+value)
         }
+        Plotly.relayout(document.getElementById('plot-divId-'+uid), {autosize: true})
     }
     
     return(
-        <Col>
+        <div>
         {/* xs={xs} md={md} lg={lg}  */}
             <Row noGutters={true} >
                 <Col id={'plot-'+uid}>
@@ -120,15 +120,18 @@ function ViolinPlot(props){
                         config={figure.config}
                         useResizeHandler={true}
                         className="d-flex h-auto"
+                        divId={'plot-divId-'+uid}
                     />
                 </Col>
             </Row>
             <Row className="justify-content-center align-items-center">
-                {/* <Col className="pr-3 pl-3" xs="auto">
+                <Col className="pr-3 pl-3" xs="auto">
                     <p>Size:</p>
-                </Col> */}
+                </Col>
                 <Col className="pr-0 pl-0">
-                    {/* <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}/> */}
+                    <SliderCustom updateInteractiveFigureSize={updateInteractiveFigureSize}
+                        value={(window.innerWidth < 992) ? 12 : 4}
+                    />
                 </Col>
                 <Col xs="auto">
                     <Button size="sm" onClick={(e) => {
@@ -224,7 +227,7 @@ function ViolinPlot(props){
                     </Col>
                 </Row>
             </div>
-        </Col>
+        </div>
     );
 }
 
