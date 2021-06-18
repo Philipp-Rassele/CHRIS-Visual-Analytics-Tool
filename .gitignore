@@ -23,10 +23,20 @@ yarn-debug.log*
 yarn-error.log*
 
 __pycache__
-/other
+other/*
+!other/jupyter-notebooks
+other/jupyter-notebooks/Thesis chapter
+other/jupyter-notebooks/.ipynb_checkpoints
+
 todo
 /data/*.csv
 /data/*.txt
 /api/flask_session
 settings.json
 .eslintrc.json
+
+!other/jupyter-notebooks/Extraction and generation of data.ipynb
+other/jupyter-notebooks/clustering.ipynb
+other/jupyter-notebooks/elevation.txt
+other/jupyter-notebooks/Test-geopanda.ipynb
+other/jupyter-notebooks/Untitled.ipynb
